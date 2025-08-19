@@ -114,7 +114,7 @@
         <!-- Footer -->
         <footer class="text-center mt-12 py-6 border-t border-slate-200">
             <p class="text-slate-500">&copy; <span id="current-year"></span> Business and Marketing Analytics Seminar'. All rights reserved.</p>
-            <p class="text-sm text-slate-400 mt-2">For questions, please contact us at <a href="mailto:contact@example.com" class="text-indigo-500 hover:underline">contact@example.com</a></p>
+            <p class="text-sm text-slate-400 mt-2">For questions, please contact us at <a href="mailto:minkshin@cityu.edu.hk" class="text-indigo-500 hover:underline">minkshin@cityu.edu.hk</a></p>
         </footer>
     </div>
 
@@ -123,49 +123,47 @@
 
         const seminarData = [
             {
-                date: "2025-09-15T11:00:00-04:00", // Use ISO 8601 format with timezone
+                date: "2025-09-11T13:00:00-02:00", // Use ISO 8601 format with timezone
                 speaker: "Prof. TI Tongil Kim",
                 affiliation: "University of Texas at Dallas",
-                title: "(tentative) XXX",
-                abstract: "This paper introduces YYY",
+                title: "(Title) TBD",
+                abstract: "(Abstract) TBD",
                 paperUrl: "#", // Link to PDF
-                registrationUrl: "#" // Link to Zoom/Teams registration
+                zoomUrl: "https://your-university.zoom.us/j/YOUR_ZOOM_ID" // <-- 1. PASTE YOUR ZOOM LINK HERE
             },
             {
-                date: "2025-09-22T11:00:00-04:00",
-                speaker: "Prof. Minkyung Kim",
-                affiliation: "Carnegie Mellon University",
-                title: "Salesforce Compensation with LLMs",
-                abstract: "We explore robust methods for drawing causal conclusions from non-experimental marketing data. The talk will cover propensity score matching, instrumental variables, and regression discontinuity designs, with practical applications in campaign effectiveness analysis.",
+                date: "2025-10-17T00:00:00-01:00",
+                speaker: "Prof. Kyeongbin Kim",
+                affiliation: "University of Rochester",
+                title: "(Title) Multi-Task Learning for Customer Base Analysis: Evidence from a Thousand Companies",
+                abstract: "(Abstract) Modeling customer-base activity is inherently a multi-objective problem. It requires understanding how many customers will be acquired over time, how many repeat purchases they will make, and how much they will spend per purchase (“upstream” prediction objectives), as well as how these behaviors aggregate into cohort- and company-level sales (“downstream” objectives). Many other empirical settings also present applied researchers with the challenge of modeling multiple processes alongside downstream outcomes that emerge from them. This paper introduces a flexible and unified generative multi-task learning framework tailored for panel data: the customer-based multi-task transformer (CBMT). The CBMT is designed to jointly project upstream and downstream outcomes. Our methodology balances generalization and specialization by leveraging commonalities across upstream customer behavior processes through shared layers, while enabling tailored predictions for each process via task-specific layers. By employing a multi-objective loss function that explicitly incorporates downstream objectives as auxiliary tasks, we achieve the “best of both worlds”: accurate predictions for each upstream outcome and strong goodness of fit for downstream outcomes. We validate the model using a unique dataset of approximately one thousand companies observed over a 37-month period. The CBMT significantly outperforms existing approaches, achieving higher predictive accuracy than 14 benchmark models across all upstream and downstream outcomes. For example, CBMT lowers company-level revenue prediction error by 34% to 65% over a temporal holdout period. We further provide insights into the drivers of this outperformance and examine conditions under which the model performs relatively better or worse through an ablation study and a heterogeneity analysis.",
                 paperUrl: "#",
-                registrationUrl: "#"
+                zoomUrl: "https://your-university.zoom.us/j/YOUR_ZOOM_ID" // <-- 1. PASTE YOUR ZOOM LINK HERE
             },
             {
-                date: "2025-09-29T11:00:00-04:00",
-                speaker: "Prof. Joonhyuk Yang",
-                affiliation: "University of Notre Dame",
-                title: "Structural model of consumer search",
-                abstract: "A deep dive into how artificial intelligence is reshaping personalized marketing, from recommendation engines to dynamic pricing strategies. We discuss both the opportunities for businesses and the ethical considerations that arise.",
+                date: "2025-11-14T00:00:00-01:00",
+                speaker: "Prof. Hana Choi",
+                affiliation: "University of Rochester",
+                title: "(Title) TBD",
+                abstract: "(Abstract) TBD",
                 paperUrl: "#",
-                registrationUrl: "#"
+                zoomUrl: "https://your-university.zoom.us/j/YOUR_ZOOM_ID" // <-- 1. PASTE YOUR ZOOM LINK HERE
+
+            },
+            {
+                date: "2025-12-12T00:00:00-01:00",
+                speaker: "Prof. Woochoel Shin",
+                affiliation: "University of Florida",
+                title: "(Title) TBD",
+                abstract: "(Abstract) TBD",
+                paperUrl: "#",
+                zoomUrl: "https://your-university.zoom.us/j/YOUR_ZOOM_ID" // <-- 1. PASTE YOUR ZOOM LINK HERE
             }
         ];
 
         const pastSeminarData = [
-            {
-                date: "2025-07-15T11:00:00-04:00",
-                speaker: "Prof. XXX",
-                affiliation: "YYY",
-                title: "Network Effects in Digital Advertisement",
-                paperUrl: "#"
-            },
-            {
-                date: "2025-07-08T11:00:00-04:00",
-                speaker: "Prof. ZZZ",
-                affiliation: "KKK",
-                title: "ESG and LLMs",
-                paperUrl: "#"
-            }
+            
+
         ];
 
         const organizerData = [
@@ -177,7 +175,7 @@
             {
                 name: "Prof. Mingyung Kim",
                 affiliation: "Ohio State University",
-                imageUrl: "https://lh6.googleusercontent.com/PsEV6HhL13C91q2R-IuNakAcdTb_KP2C3dz7ANNHp84sMMh8zSyXw_M-AqU2yTsalRk0vZV-7LCzRENEUDpnXv3uQKGOXa7i0yKBXCr56jATll4wq0jQeJrQoQxXTLtVBMbAqyupzvl8r06sXIjadOS-HGh3uYcb3a2hirD_BF25Z72rhAkzIg=w1280"
+                imageUrl: "https://s3.us-east-2.amazonaws.com/files.fisher.osu.edu/public/styles/profile_image_840/public/profile-images/Photo_MingyungKim_20241014_0.jpg?VersionId=LR0kJbti54aaggUIHao6pO7WSSUunA6R&h=52416502&itok=1Wy5FRqP"
             },
             {
                 name: "Prof. Minkyu Shin",
@@ -219,10 +217,13 @@
 
                 const seminarDate = new Date(nextSeminar.date);
                 const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-                const timeOptions = { hour: 'numeric', minute: '2-digit', timeZoneName: 'short' };
-                const formattedDate = seminarDate.toLocaleDateString('en-US', dateOptions);
-                const formattedTime = seminarDate.toLocaleTimeString('en-US', timeOptions);
-
+		// Generate time strings for EST, CST, and PST
+		const timeOptions = { hour: 'numeric', minute: '2-digit', timeZoneName: 'short' };
+		const timeEST = seminarDate.toLocaleTimeString('en-US', { ...timeOptions, timeZone: 'America/New_York' });
+		const timeCST = seminarDate.toLocaleTimeString('en-US', { ...timeOptions, timeZone: 'America/Chicago' });
+		const timePST = seminarDate.toLocaleTimeString('en-US', { ...timeOptions, timeZone: 'America/Los_Angeles' });                
+		const formattedDate = seminarDate.toLocaleDateString('en-US', dateOptions);
+                
                 homeSection.innerHTML = `
                     <div class="bg-white p-6 md:p-8 rounded-lg shadow-md">
                         <h2 class="text-2xl md:text-3xl font-bold mb-2">Upcoming Seminar</h2>
@@ -240,19 +241,21 @@
                             </div>
                             <div class="md:col-span-1 flex flex-col space-y-3">
                                 <a href="${nextSeminar.paperUrl}" class="text-center w-full bg-indigo-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-indigo-700 transition-colors duration-300">View Paper (PDF)</a>
-                                <a href="${nextSeminar.registrationUrl}" class="text-center w-full bg-green-500 text-white font-semibold py-2 px-4 rounded-lg hover:bg-green-600 transition-colors duration-300">Register Here</a>
-                                <div class="text-center border border-slate-200 p-3 rounded-lg">
-                                    <p class="font-bold text-lg">${formattedTime}</p>
-                                </div>
+                                <a href="${nextSeminar.zoomUrl}" target="_blank" class="text-center w-full bg-green-500 text-white font-semibold py-2 px-4 rounded-lg hover:bg-green-600 transition-colors duration-300">Join via Zoom</a>
+                                <div class="text-center border border-slate-200 p-3 rounded-lg space-y-1">
+				    <p class="font-semibold text-indigo-700 text-sm">${timeEST}</p>
+				    <p class="font-semibold text-slate-600 text-sm">${timeCST}</p>
+				    <p class="font-semibold text-slate-600 text-sm">${timePST}</p>
+				</div>
                             </div>
                         </div>
                     </div>
-                    <div class="text-center mt-8">
-                        <h3 class="text-xl font-semibold mb-2">Join our mailing list for updates!</h3>
-                        <form class="flex flex-col sm:flex-row justify-center gap-2 max-w-md mx-auto">
-                            <input type="email" placeholder="your.email@example.com" class="flex-grow p-2 border border-slate-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:outline-none">
-                            <button type="submit" class="bg-slate-700 text-white font-semibold py-2 px-4 rounded-md hover:bg-slate-800 transition-colors">Subscribe</button>
-                        </form>
+                    <div class="text-center mt-8 p-6 bg-slate-50 rounded-lg">
+                        <h3 class="text-xl font-semibold mb-2">Please Sign Our Guestbook! ✍️</h3>
+                        <p class="text-slate-600 mb-4">Let us know you were here by adding your name and institution.</p>
+                        <a href="https://docs.google.com/spreadsheets/d/1uc3b3ZmZwC13VJwYAn5Ia6gsEhT7Z6ltIyRwLfOItg4/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="inline-block bg-sky-500 text-white font-semibold py-2 px-6 rounded-lg hover:bg-sky-600 transition-colors duration-300 shadow-sm">
+                            Open Guestbook
+                        </a>
                     </div>
                 `;
             }
