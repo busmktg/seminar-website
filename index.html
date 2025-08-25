@@ -53,7 +53,7 @@
                     <a href="#home" class="nav-link active px-2 py-1 text-slate-600 hover:text-indigo-600 transition-colors duration-300" data-target="home">Home</a>
                     <a href="#schedule" class="nav-link px-2 py-1 text-slate-600 hover:text-indigo-600 transition-colors duration-300" data-target="schedule">Schedule</a>
                     <a href="#past" class="nav-link px-2 py-1 text-slate-600 hover:text-indigo-600 transition-colors duration-300" data-target="past">Past Seminars</a>
-                    <a href="#organizers" class="nav-link px-2 py-1 text-slate-600 hover:text-indigo-600 transition-colors duration-300" data-target="organizers">Organizers</a>
+                    <a href="#organizers" class="nav-link px-2 py-1 text-slate-600 hover:text-indigo-600 transition-colors duration-300" data-target="organizers">Seminar Info</a>
                 </nav>
             </div>
         </header>
@@ -103,12 +103,57 @@
             </section>
 
             <!-- Organizers Section -->
-            <section id="organizers" class="content-section">
-                <h2 class="text-3xl font-bold mb-8 text-center">Organizers</h2>
-                <div id="organizers-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-                    <!-- Organizer cards will be injected here by JavaScript -->
-                </div>
-            </section>
+<!-- Seminar Info + Organizers Section -->
+<section id="organizers" class="content-section">
+  <!-- Info block -->
+  <h2 class="text-3xl font-bold mb-4 text-center">Seminar Info</h2>
+  <div class="bg-white p-6 md:p-8 rounded-lg shadow-md mb-10 max-w-4xl mx-auto text-slate-700 space-y-4">
+    <p>
+      This seminar is designed to promote the research of Korean scholars by sharing cutting‑edge studies, fostering networking opportunities,
+      and supporting PhD students in their academic and professional journeys. The initiative was proposed by Professors
+      <span class="font-medium">Young‑Hoon Park</span> and <span class="font-medium">Jiwoong Shin</span>.
+    </p>
+
+    <div>
+      <h3 class="text-xl font-semibold mb-2">Objectives</h3>
+      <ul class="list-disc pl-6 space-y-2">
+        <li>
+          <span class="font-medium">Support PhD Students:</span> Help PhD graduates transition into academia (e.g., job search guidance,
+          and networking opportunities).
+        </li>
+        <li>
+          <span class="font-medium">Bridging Academia and Industry:</span> Provide a platform (from Korea) to connect researchers with industry professionals,
+          fostering partnerships for real‑world data projects and applied research opportunities.
+        </li>
+        <li>
+          <span class="font-medium">Insights from Senior Scholars:</span> Offer tips and strategies from established scholars to navigate publication
+          and career advancement.
+        </li>
+        <li>
+          <span class="font-medium">Thematic Lectures:</span> Explore lectures on specific themes by renowned scholars.
+        </li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="text-xl font-semibold mb-2">Format</h3>
+      <ul class="list-disc pl-6 space-y-2">
+        <li><span class="font-medium">Platform:</span> Each seminar is conducted via Zoom.</li>
+        <li><span class="font-medium">Structure:</span> 45‑minute talk, followed by a 15‑minute discussion session (discussion is optional).</li>
+        <li><span class="font-medium">Schedule:</span> Fridays at 11:00 AM (Eastern Time) but may vary depending on speaker availability.</li>
+        <li><span class="font-medium">Frequency:</span> We plan to host 4–5 talks per semester. Topics and formats are evolving to maximize engagement and value,
+            including opportunities for industry practitioners to join and contribute.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Organizers grid -->
+  <h3 class="text-2xl font-bold mb-6 text-center">Organizers</h3>
+  <div id="organizers-grid"
+       class="grid gap-8 justify-items-center [grid-template-columns:repeat(auto-fit,minmax(220px,1fr))]">
+    <!-- Organizer cards will be injected here by JavaScript -->
+  </div>
+</section>
         </main>
 
         <!-- Footer -->
@@ -181,12 +226,8 @@
                 name: "Prof. Minkyu Shin",
                 affiliation: "City University of Hong Kong",
                 imageUrl: "https://www.cb.cityu.edu.hk/portfolio/photos/minkshin.jpg"
-            },
-            {
-                name: "XXXX",
-                affiliation: "YYYYY",
-                imageUrl: "https://placehold.co/400x400/22c55e/ffffff?text=TBL"
             }
+
         ];
 
         // --- CORE WEBSITE LOGIC (No need to edit below this line) ---
@@ -251,10 +292,10 @@
                         </div>
                     </div>
                     <div class="text-center mt-8 p-6 bg-slate-50 rounded-lg">
-                        <h3 class="text-xl font-semibold mb-2">Please Sign Our Guestbook! ✍️</h3>
-                        <p class="text-slate-600 mb-4">Let us know you were here by adding your name and institution.</p>
-                        <a href="https://docs.google.com/spreadsheets/d/1uc3b3ZmZwC13VJwYAn5Ia6gsEhT7Z6ltIyRwLfOItg4/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="inline-block bg-sky-500 text-white font-semibold py-2 px-6 rounded-lg hover:bg-sky-600 transition-colors duration-300 shadow-sm">
-                            Open Guestbook
+                        <h3 class="text-xl font-semibold mb-2">Please join our maillist! ✍️</h3>
+                        <p class="text-slate-600 mb-4">Thank you for your consideration.</p>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSclEvQ5M7wkh5AZhky0gVBLuCuPPnUSt-DL1xnyNDrzzGsB8A/viewform?usp=sharing&ouid=108774267862951597918" target="_blank" rel="noopener noreferrer" class="inline-block bg-sky-500 text-white font-semibold py-2 px-6 rounded-lg hover:bg-sky-600 transition-colors duration-300 shadow-sm">
+                            Open Google link
                         </a>
                     </div>
                 `;
