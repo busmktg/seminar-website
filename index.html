@@ -110,8 +110,7 @@
   <div class="bg-white p-6 md:p-8 rounded-lg shadow-md mb-10 max-w-4xl mx-auto text-slate-700 space-y-4">
     <p>
       This seminar is designed to promote the research of Korean scholars by sharing cutting‑edge studies, fostering networking opportunities,
-      and supporting PhD students in their academic and professional journeys. The initiative was proposed by Professors
-      <span class="font-medium">Young‑Hoon Park</span> and <span class="font-medium">Jiwoong Shin</span>.
+      and supporting PhD students in their academic and professional journeys. 
     </p>
 
     <div>
@@ -141,7 +140,7 @@
         <li><span class="font-medium">Platform:</span> Each seminar is conducted via Zoom.</li>
         <li><span class="font-medium">Structure:</span> 45‑minute talk, followed by a 15‑minute discussion session (discussion is optional).</li>
         <li><span class="font-medium">Schedule:</span> Fridays at 11:00 AM (Eastern Time) but may vary depending on speaker availability.</li>
-        <li><span class="font-medium">Frequency:</span> We plan to host 4–5 talks per semester. Topics and formats are evolving to maximize engagement and value,
+        <li><span class="font-medium">Frequency:</span> We plan to host 4--5 talks per semester. Topics and formats are evolving to maximize engagement and value,
             including opportunities for industry practitioners to join and contribute.</li>
       </ul>
     </div>
@@ -168,7 +167,7 @@
 
         const seminarData = [
             {
-                date: "2025-09-11T13:00:00-02:00", // Use ISO 8601 format with timezone
+                date: "2025-09-12T13:00:00-02:00", // Use ISO 8601 format with timezone
                 speaker: "Prof. TI Tongil Kim",
                 affiliation: "University of Texas at Dallas",
                 title: "(Title) TBD",
@@ -257,18 +256,29 @@
                 }
 
                 const seminarDate = new Date(nextSeminar.date);
-                const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-		// Generate time strings for EST, CST, and PST
-		const timeOptions = { hour: 'numeric', minute: '2-digit', timeZoneName: 'short' };
-		const timeEST = seminarDate.toLocaleTimeString('en-US', { ...timeOptions, timeZone: 'America/New_York' });
-		const timeCST = seminarDate.toLocaleTimeString('en-US', { ...timeOptions, timeZone: 'America/Chicago' });
-		const timePST = seminarDate.toLocaleTimeString('en-US', { ...timeOptions, timeZone: 'America/Los_Angeles' });                
-		const formattedDate = seminarDate.toLocaleDateString('en-US', dateOptions);
+                
+                // --- MODIFICATION START ---
+                // Create a single, unambiguous date-time string in Eastern Time.
+                // This ensures everyone sees the same date and time.
+                const dateTimeOptions = {
+                    weekday: 'long',
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                    hour: 'numeric',
+                    minute: '2-digit',
+                    timeZone: 'America/New_York',
+                    timeZoneName: 'short'
+                };
+                const formattedDateTime = seminarDate.toLocaleString('en-US', dateTimeOptions);
+                // --- MODIFICATION END ---
                 
                 homeSection.innerHTML = `
                     <div class="bg-white p-6 md:p-8 rounded-lg shadow-md">
                         <h2 class="text-2xl md:text-3xl font-bold mb-2">Upcoming Seminar</h2>
-                        <p class="text-lg text-slate-500 mb-6">${formattedDate}</p>
+                        
+                        <!-- Use the new single date-time string -->
+                        <p class="text-lg text-slate-500 mb-6">${formattedDateTime}</p>
                         
                         <div class="grid md:grid-cols-3 gap-6">
                             <div class="md:col-span-2">
@@ -283,11 +293,8 @@
                             <div class="md:col-span-1 flex flex-col space-y-3">
                                 <a href="${nextSeminar.paperUrl}" class="text-center w-full bg-indigo-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-indigo-700 transition-colors duration-300">View Paper (PDF)</a>
                                 <a href="${nextSeminar.zoomUrl}" target="_blank" class="text-center w-full bg-green-500 text-white font-semibold py-2 px-4 rounded-lg hover:bg-green-600 transition-colors duration-300">Join via Zoom</a>
-                                <div class="text-center border border-slate-200 p-3 rounded-lg space-y-1">
-				    <p class="font-semibold text-indigo-700 text-sm">${timeEST}</p>
-				    <p class="font-semibold text-slate-600 text-sm">${timeCST}</p>
-				    <p class="font-semibold text-slate-600 text-sm">${timePST}</p>
-				</div>
+                                
+                                <!-- The block with multiple timezones has been removed for clarity -->
                             </div>
                         </div>
                     </div>
