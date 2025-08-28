@@ -167,13 +167,13 @@
 
         const seminarData = [
             {
-                date: "2025-09-12T13:00:00-02:00", // Use ISO 8601 format with timezone
+                date: "2025-09-11T13:00:00-02:00", // Use ISO 8601 format with timezone
                 speaker: "Prof. TI Tongil Kim",
                 affiliation: "University of Texas at Dallas",
                 title: "(Title) Got Chocolate Milk? School Flavored Milk Ban and its Impact on Retail Beverage Consumption",
                 abstract: "(Abstract) TBD",
                 paperUrl: "#", // Link to PDF
-                zoomUrl: "https://cityu.zoom.us/j/88330372939" // <-- 1. PASTE YOUR ZOOM LINK HERE
+                zoomUrl: "https://cityu.zoom.us/j/88330372939" // 
             },
             {
                 date: "2025-10-17T00:00:00-01:00",
@@ -182,7 +182,7 @@
                 title: "(Title) Multi-Task Learning for Customer Base Analysis: Evidence from a Thousand Companies",
                 abstract: "(Abstract) Modeling customer-base activity is inherently a multi-objective problem. It requires understanding how many customers will be acquired over time, how many repeat purchases they will make, and how much they will spend per purchase (“upstream” prediction objectives), as well as how these behaviors aggregate into cohort- and company-level sales (“downstream” objectives). Many other empirical settings also present applied researchers with the challenge of modeling multiple processes alongside downstream outcomes that emerge from them. This paper introduces a flexible and unified generative multi-task learning framework tailored for panel data: the customer-based multi-task transformer (CBMT). The CBMT is designed to jointly project upstream and downstream outcomes. Our methodology balances generalization and specialization by leveraging commonalities across upstream customer behavior processes through shared layers, while enabling tailored predictions for each process via task-specific layers. By employing a multi-objective loss function that explicitly incorporates downstream objectives as auxiliary tasks, we achieve the “best of both worlds”: accurate predictions for each upstream outcome and strong goodness of fit for downstream outcomes. We validate the model using a unique dataset of approximately one thousand companies observed over a 37-month period. The CBMT significantly outperforms existing approaches, achieving higher predictive accuracy than 14 benchmark models across all upstream and downstream outcomes. For example, CBMT lowers company-level revenue prediction error by 34% to 65% over a temporal holdout period. We further provide insights into the drivers of this outperformance and examine conditions under which the model performs relatively better or worse through an ablation study and a heterogeneity analysis.",
                 paperUrl: "#",
-                zoomUrl: "https://your-university.zoom.us/j/YOUR_ZOOM_ID" // <-- 1. PASTE YOUR ZOOM LINK HERE
+                zoomUrl: "ZOOM HERE" // 
             },
             {
                 date: "2025-11-14T00:00:00-01:00",
@@ -191,7 +191,7 @@
                 title: "(Title) TBD",
                 abstract: "(Abstract) TBD",
                 paperUrl: "#",
-                zoomUrl: "https://your-university.zoom.us/j/YOUR_ZOOM_ID" // <-- 1. PASTE YOUR ZOOM LINK HERE
+                zoomUrl: "ZOOM HERE" // 
 
             },
             {
@@ -201,7 +201,7 @@
                 title: "(Title) TBD",
                 abstract: "(Abstract) TBD",
                 paperUrl: "#",
-                zoomUrl: "https://your-university.zoom.us/j/YOUR_ZOOM_ID" // <-- 1. PASTE YOUR ZOOM LINK HERE
+                zoomUrl: "ZOOM HERE" // 
             }
         ];
 
@@ -256,10 +256,6 @@
                 }
 
                 const seminarDate = new Date(nextSeminar.date);
-                
-                // --- MODIFICATION START ---
-                // Create a single, unambiguous date-time string in Eastern Time.
-                // This ensures everyone sees the same date and time.
                 const dateTimeOptions = {
                     weekday: 'long',
                     year: 'numeric',
@@ -271,13 +267,32 @@
                     timeZoneName: 'short'
                 };
                 const formattedDateTime = seminarDate.toLocaleString('en-US', dateTimeOptions);
+
+                // --- MODIFICATION START ---
+                // Logic to disable buttons if the link is a placeholder.
+                const isPaperAvailable = nextSeminar.paperUrl && nextSeminar.paperUrl !== '#';
+                const isZoomLinkAvailable = nextSeminar.zoomUrl && !nextSeminar.zoomUrl.includes('YOUR_ZOOM_ID');
+
+                // Define classes and attributes for the Paper button based on availability.
+                const paperButtonClasses = isPaperAvailable
+                    ? 'bg-indigo-600 text-white hover:bg-indigo-700'
+                    : 'bg-slate-400 text-slate-100 cursor-not-allowed';
+                const paperButtonAttributes = isPaperAvailable
+                    ? `href="${nextSeminar.paperUrl}" target="_blank"`
+                    : `href="#" onclick="return false;"`;
+
+                // Define classes and attributes for the Zoom button based on availability.
+                const zoomButtonClasses = isZoomLinkAvailable
+                    ? 'bg-green-500 text-white hover:bg-green-600'
+                    : 'bg-slate-400 text-slate-100 cursor-not-allowed';
+                const zoomButtonAttributes = isZoomLinkAvailable
+                    ? `href="${nextSeminar.zoomUrl}" target="_blank"`
+                    : `href="#" onclick="return false;"`;
                 // --- MODIFICATION END ---
                 
                 homeSection.innerHTML = `
                     <div class="bg-white p-6 md:p-8 rounded-lg shadow-md">
                         <h2 class="text-2xl md:text-3xl font-bold mb-2">Upcoming Seminar</h2>
-                        
-                        <!-- Use the new single date-time string -->
                         <p class="text-lg text-slate-500 mb-6">${formattedDateTime}</p>
                         
                         <div class="grid md:grid-cols-3 gap-6">
@@ -291,10 +306,8 @@
                                 </div>
                             </div>
                             <div class="md:col-span-1 flex flex-col space-y-3">
-                                <a href="${nextSeminar.paperUrl}" class="text-center w-full bg-indigo-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-indigo-700 transition-colors duration-300">View Paper (PDF)</a>
-                                <a href="${nextSeminar.zoomUrl}" target="_blank" class="text-center w-full bg-green-500 text-white font-semibold py-2 px-4 rounded-lg hover:bg-green-600 transition-colors duration-300">Join via Zoom</a>
-                                
-                                <!-- The block with multiple timezones has been removed for clarity -->
+                                <a ${paperButtonAttributes} class="text-center w-full font-semibold py-2 px-4 rounded-lg transition-colors duration-300 ${paperButtonClasses}">View Paper (PDF)</a>
+                                <a ${zoomButtonAttributes} class="text-center w-full font-semibold py-2 px-4 rounded-lg transition-colors duration-300 ${zoomButtonClasses}">Join via Zoom</a>
                             </div>
                         </div>
                     </div>
