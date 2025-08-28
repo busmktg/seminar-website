@@ -283,14 +283,14 @@
                 
                 homeSection.innerHTML = `
                     <div class="bg-white p-6 md:p-8 rounded-lg shadow-md">
-                        <h2 class="text-2xl md:text-3xl font-bold mb-2">Upcoming Talk</h2>
+                        <h2 class="text-2xl md:text-3xl font-bold mb-2">Next Talk</h2>
                         <p class="text-lg text-slate-500 mb-6">${formattedDateTime}</p>
                         
                         <div class="grid md:grid-cols-3 gap-6">
                             <div class="md:col-span-2">
                                 <h3 class="text-xl font-semibold text-indigo-700">${nextSeminar.title}</h3>
-                                <p class="font-medium mt-2">${nextSeminar.speaker}</p>
-                                <p class="text-sm text-slate-500 mb-4">${nextSeminar.affiliation}</p>
+                                <p class="font-xl mt-2">${nextSeminar.speaker}</p>
+                                <p class="text-medium text-slate-500 mb-4">${nextSeminar.affiliation}</p>
 
                                 <div id="abstract-container" class="mt-4">
                                     <p class="text-slate-600 text-justify">${nextSeminar.abstract}</p>
@@ -404,6 +404,7 @@
 </body>
 
 </html>
+
 
 
 
