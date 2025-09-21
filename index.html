@@ -145,6 +145,7 @@
                 date: "2025-09-26T11:30:00-04:00", // Use ISO 8601 format with timezone
                 speaker: "Tongil (TI) Kim",
                 affiliation: "University of Texas at Dallas",
+		discussant: "Bella (Yeolim) Yoon, Ph.D. Student at University of Minnesota",
                 title: "Got Chocolate Milk? School Flavored Milk Ban and its Impact on Retail Beverage Consumption",
                 abstract: "Do targeted school nutrition bans generate spillover effects on retail purchases that reinforce or undermine their intended health objectives? We investigate this question by examining the 2011 flavored milk ban (affecting products such as chocolate milk) implemented by the Los Angeles Unified School District (LAUSD). Using Nielsen retail scanner data and synthetic control methods, we estimate the spillover effects of this flavored milk ban on retail beverage purchases outside schools. We address three key questions: First, does the ban change retail purchases of the flavored milk? Second, does the ban generate unintended product substitution toward other beverages? Third, how do effects, if any, change when the ban is reversed? Our results show that the flavored milk ban decreased retail purchases by 8% within LAUSD boundaries, suggesting policy reinforcement. The ban did not significantly affect plain milk or soda consumption but led to a temporary 4.3% increase in juice purchases. The ban’s repeal five years later produced no significant behavioral changes. Additional analyses show effects were driven by negative publicity rather than product displacement. Moreover, increased juice consumption temporarily offset sugar reduction benefits outside schools, and protein intake decreased by 4.8%, revealing complex spillover effects with important policy and managerial implications.",
                 paperUrl: "#", // Link to PDF
@@ -266,16 +267,23 @@
                     : `href="#" onclick="return false;"`;
                 // --- MODIFICATION END ---
                 
+                
                 homeSection.innerHTML = `
                     <div class="bg-white p-6 md:p-8 rounded-lg shadow-md">
                         <h2 class="text-2xl md:text-3xl font-bold mb-2">Next Talk</h2>
                         <p class="text-lg text-slate-500 mb-6">${formattedDateTime}</p> 
-                        <!-- <p class="text-lg text-slate-500 mb-6">(Postponed - New schedule will be updated soon.)</p> -->
+                        
                         <div class="grid md:grid-cols-3 gap-6">
                             <div class="md:col-span-2">
                                 <h3 class="text-xl font-semibold text-indigo-700">${nextSeminar.title}</h3>
                                 <p class="text-xl font-semibold mt-4 mb-1">${nextSeminar.speaker}</p>
-                                <p class="text-medium text-slate-500 mb-4">${nextSeminar.affiliation}</p>
+                                <p class="text-medium text-slate-500 mb-1">${nextSeminar.affiliation}</p>
+                                
+                                ${nextSeminar.discussant ? `
+                                    <p class="text-medium text-slate-500 mb-4">
+                                        <span class="font-semibold">Discussant:</span> ${nextSeminar.discussant}
+                                    </p>
+                                ` : ''}
 
                                 <div id="abstract-container" class="mt-4">
                                     <p class="text-slate-600 text-justify">${nextSeminar.abstract}</p>
