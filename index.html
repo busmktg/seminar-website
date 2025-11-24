@@ -66,6 +66,7 @@
                             <tr>
                                 <th class="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">Date</th>
                                 <th class="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">Speaker</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">Discussant</th>
                                 <th class="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">Paper Title</th>
                             </tr>
                         </thead>
@@ -83,6 +84,7 @@
                             <tr>
                                 <th class="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">Date</th>
                                 <th class="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">Speaker</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">Discussant</th>
                                 <th class="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">Paper Title</th>
                             </tr>
                         </thead>
@@ -146,6 +148,7 @@
                 date: "2025-12-12T11:00:00-05:00",
                 speaker: "Woochoel Shin",
                 affiliation: "University of Florida",
+		discussant: "Soohyun Kim, Ph.D. Student at University of Southern California",		
                 title: "Does an Integrated Ad Management Platform Yield Better Results? Evidence from a Field Experiment in Search Advertising",
                 abstract: "Advertisers increasingly rely on an intermediary to coordinate and optimize campaign performance across multiple ad platforms. When the intermediary is owned by one of the competing ad platforms, an important question arises: can such an integrated intermediary improve the advertiser’s campaign outcomes by impartially managing campaigns across competing native platforms? We address this question through a 16-week, randomized field experiment in search advertising, where Search Ads 360 (SA360), owned by Google, manages campaigns on both Google and Bing. The results show that intermediary-managed campaigns generate more clicks but that the cost efficiency is comparable to directly managed campaigns. Moreover, within these campaigns, Microsoft Ads consistently delivers superior cost efficiency, while spending is disproportionately directed toward Google Ads, particularly under automated bidding. To understand the mechanisms and identify the conditions under which we may observe behavior consistent with the experimental evidence, we develop a theoretical model. Our analysis shows that the intermediary-managed campaigns yield more clicks when the cost of cross-platform integration is sufficiently low. Furthermore, while the intermediary may choose to deepen technological integration with its native platform, the competing platform can generate more clicks if its targetability is much higher, which may stem from better targeting technology or a thinner advertiser market on its platform. Even so, the intermediary may direct more spending to its own search engine if it takes into account its own profits in addition to the advertisers’.",
                 paperUrl: "#",
@@ -158,6 +161,7 @@
                 date: "2025-11-14T11:00:00-05:00",
                 speaker: "Hana Choi",
                 affiliation: "University of Rochester",
+                // discussant is missing
                 title: "Do Review Solicitations Elicit Reviews Where They Matter for Sales and Returns?",
                 abstract: "Firms solicit online reviews to enhance sales and reduce mismatches, yet it is unclear whether solicitations generate reviews where buyers benefit most, since they target reviewers while value accrues through buyers. Using rich individual-level panel data on transactions, reviews, and returns from a large apparel e-commerce retailer, we examine alignment between reviewer response and buyer value. Leveraging natural variation in solicitations, we estimate a two-stage framework: Stage 1 measures how solicitations affect review generation across informational states, and Stage 2 quantifies how these induced reviews influence subsequent sales and returns. Additional reviews increase sales and reduce return rates by up to 0.25 percentage points for products with zero-to-low prior reviews. However, solicitations face a first-review barrier, failing to elicit reviews in these high-value states, and thereby creating a reviewer-buyer misalignment. Counterfactual simulations indicate that raising first-review likelihood by two percentage points increases annual net revenue by $120 per product, highlighting the value of targeting zero-review products.",
                 paperUrl: "#",
@@ -194,7 +198,7 @@
             {
                 name: "Mingyung Kim",
                 affiliation: "Ohio State University",
-                imageUrl: "https://s3.us-east-2.amazonaws.com/files.fisher.osu.edu/public/styles/profile_image_840/public/profile-images/Photo_MingyungKim_20241014_0.jpg?VersionId=LR0kJbti54aaggUIHao6pO7WSSUunA6R&h=52416502&itok=1Wy5FRqP"
+                imageUrl: "https://s3.us-east-2.amazonaws.com/files.fisher.osu.edu/public/styles/profile_image_840/public/profile-images/Photo_MingyungKim_20241014_0.jpg?VersionId=LR0kJbti54aaggUIHao6pO7WSSUunA6R&h=52416502&itok=1Wy5FRgP"
             },
             {
                 name: "Minkyu Shin",
@@ -301,26 +305,39 @@
                 `;
             }
 
+            // MODIFIED renderTable FUNCTION to consistently include and format the discussant column
             function renderTable(data, tbodyId) {
                 const tbody = document.getElementById(tbodyId);
                 tbody.innerHTML = ''; // Clear existing rows
+                // Both tables now have 4 columns
+                const colSpan = 4; 
+
                 if (data.length === 0) {
-                    tbody.innerHTML = `<tr><td colspan="3" class="text-center py-4 text-slate-500">No seminars to display.</td></tr>`;
+                    tbody.innerHTML = `<tr><td colspan="${colSpan}" class="text-center py-4 text-slate-500">No seminars to display.</td></tr>`;
                     return;
                 }
                 data.forEach(seminar => {
                     const seminarDate = new Date(seminar.date);
                     const formattedDate = seminarDate.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
 
-                    // Check if the talk is postponed
                     const isPostponed = seminar.status === 'postponed';
-                    // If postponed, show 'Postponed' as the date. Otherwise, show the formatted date.
                     const dateContent = isPostponed ? 'Postponed' : formattedDate;
+
+                    let displayDiscussant = seminar.discussant || ''; // Default to blank string if no discussant is assigned
+                    
+                    // Shorten the discussant name to the part before the first comma
+                    if (displayDiscussant.includes(',')) {
+                        displayDiscussant = displayDiscussant.split(',')[0].trim();
+                    }
+
+                    // Discussant cell is included unconditionally for all rows
+                    const discussantCell = `<td class="px-6 py-4 whitespace-nowrap text-sm text-slate-600">${displayDiscussant}</td>`;
 
                     const row = `
                         <tr>
                             <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-slate-900">${dateContent}</td>
                             <td class="px-6 py-4 whitespace-nowrap text-sm text-slate-600">${seminar.speaker}</td>
+                            ${discussantCell}
                             <td class="px-6 py-4 text-sm text-slate-600">${seminar.title}</td>
                         </tr>
                     `;
