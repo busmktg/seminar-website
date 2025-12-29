@@ -163,7 +163,7 @@
             {
                 date: "2026-04-24T11:00:00-04:00",
                 speaker: "Industry Expert",
-                affiliation: "Industry Practitioner Session",
+                affiliation: "AMAZON",
                 title: "Industry Insights",
                 abstract: "Details for the industry practitioner session will be provided soon.",
                 paperUrl: "#",
@@ -314,16 +314,33 @@
                         timeZone: 'UTC' 
                     });
 
-                    let displayDiscussant = seminar.discussant || ''; 
-                    if (displayDiscussant.includes(',')) {
-                        displayDiscussant = displayDiscussant.split(',')[0].trim();
+                    // LOGIC FOR DISCUSSANT SPLITTING
+                    let discussantName = '';
+                    let discussantAffiliation = '';
+
+                    if (seminar.discussant) {
+                        // Split by the first comma found
+                        const firstCommaIndex = seminar.discussant.indexOf(',');
+                        if (firstCommaIndex !== -1) {
+                            discussantName = seminar.discussant.substring(0, firstCommaIndex).trim();
+                            discussantAffiliation = seminar.discussant.substring(firstCommaIndex + 1).trim();
+                        } else {
+                            // If no comma, assume it is just a name
+                            discussantName = seminar.discussant;
+                        }
                     }
 
                     const row = `
                         <tr>
                             <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-slate-900">${formattedDate}</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-slate-600">${seminar.speaker}</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-slate-600">${displayDiscussant}</td>
+                            <td class="px-6 py-4 text-sm text-slate-600">
+                                <div class="font-medium text-slate-900">${seminar.speaker}</div>
+                                <div class="text-xs text-slate-500 mt-0.5">${seminar.affiliation}</div>
+                            </td>
+                            <td class="px-6 py-4 text-sm text-slate-600">
+                                <div class="font-medium text-slate-900">${discussantName}</div>
+                                ${discussantAffiliation ? `<div class="text-xs text-slate-500 mt-0.5">${discussantAffiliation}</div>` : ''}
+                            </td>
                             <td class="px-6 py-4 text-sm text-slate-600">${seminar.title}</td>
                         </tr>
                     `;
