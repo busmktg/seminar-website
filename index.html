@@ -95,42 +95,31 @@
             </section>
 
             <section id="organizers" class="content-section">
- <h2 class="text-3xl font-bold mb-4 text-center">Seminar Information</h2>
- <div class="bg-white p-6 md:p-8 rounded-lg shadow-md mb-10 max-w-4xl mx-auto text-slate-700 space-y-4">
-   <p>
-     The Business and Marketing Analytics Seminar has the following objectives and structure:
-   </p>
+                <h2 class="text-3xl font-bold mb-4 text-center">Seminar Information</h2>
+                <div class="bg-white p-6 md:p-8 rounded-lg shadow-md mb-10 max-w-4xl mx-auto text-slate-700 space-y-4">
+                    <p>The Business and Marketing Analytics Seminar has the following objectives and structure:</p>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2">Objectives</h3>
+                        <ul class="list-disc pl-6 space-y-2">
+                            <li><span class="font-medium">Promote research:</span> Present papers, share comments and feedback, and develop new ideas.</li>
+                            <li><span class="font-medium">Support PhD students:</span> Provide an opportunity to discuss papers, offer guidance on their research and academic journey.</li>
+                            <li><span class="font-medium">Build a community:</span> Provide networking opportunities, foster research collaboration, and create a supportive environment.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2">Structure</h3>
+                        <ul class="list-disc pl-6 space-y-2">
+                            <li><span class="font-medium">Virtual (Zoom) Format</span></li>
+                            <li><span class="font-medium">60-Minute Talk:</span> 45‑minute presentation, 15‑minute Q&A or discussion (with a PhD discussant).</li>
+                            <li><span class="font-medium">(Optional)</span> Informal conversation after each talk.</li>
+                        </ul>
+                    </div>
+                </div>
 
-   <div>
-     <h3 class="text-xl font-semibold mb-2">Objectives</h3>
-     <ul class="list-disc pl-6 space-y-2">
-       <li>
-         <span class="font-medium">Promote research: </span> Present papers, share comments and feedback, and develop new ideas.
-       </li>
-       <li>
-         <span class="font-medium">Support PhD students: </span> Provide an opportunity to discuss papers, offer guidance on their research and academic journey.
-       </li>
-       <li>
-         <span class="font-medium">Build a community:</span> Provide networking opportunities, foster research collaboration, and create a supportive environment.
-       </li>
-     </ul>
-   </div>
-
-   <div>
-     <h3 class="text-xl font-semibold mb-2">Structure</h3>
-     <ul class="list-disc pl-6 space-y-2">
-       <li><span class="font-medium">Virtual (Zoom) Format</span> </li>
-       <li><span class="font-medium">60-Minute Talk:</span> 45‑minute presentation, 15‑minute Q&A or discussion (with a PhD discussant).</li>
-       <li><span class="font-medium">(Optional)</span> Informal conversation after each talk.</li>
-     </ul>
-   </div>
- </div>
-
- <h3 class="text-2xl font-bold mb-6 text-center">Organizers</h3>
- <div id="organizers-grid"
-       class="grid gap-8 justify-items-center [grid-template-columns:repeat(auto-fit,minmax(220px,1fr))]">
-    </div>
-</section>
+                <h3 class="text-2xl font-bold mb-6 text-center">Organizers</h3>
+                <div id="organizers-grid" class="grid gap-8 justify-items-center [grid-template-columns:repeat(auto-fit,minmax(220px,1fr))]">
+                    </div>
+            </section>
         </main>
 
         <footer class="text-center mt-12 py-6 border-t border-slate-200">
@@ -140,53 +129,85 @@
     </div>
 
     <script>
-        // --- EDIT YOUR WORKSHOP DATA HERE ---
+        // --- DATA SECTION ---
 
         const seminarData = [
-            // Next Upcoming Seminar: 2025-12-12
-            
+            {
+                date: "2026-01-23T12:00:00-05:00",
+                speaker: "Yewon Kim",
+                affiliation: "Stanford University",
+                discussant: "", 
+                title: "Marketing Durable and Sustainable Technologies in Low- and Middle-Income Countries",
+                abstract: "We examine barriers to - and market-based solutions for - adopting durable and sustainable technologies in low- and middle-income countries (LMICs), focusing on lithium-ion batteries for electric three-wheelers in Bangladesh. Despite clear environmental and private benefits, lithium-ion batteries hold a minimal market share, with the market dominated by short-lived lead-acid batteries whose recycling generates severe lead pollution. An incentivized field experiment and surveys show that low trust in manufacturers’ claims, along with financial constraints and other factors that reduce the value of future battery use (e.g., high salvage value, high business uncertainty), depress willingness to pay for durable batteries and limit the effectiveness of warranties and related services. We find that product-specific loans from local financial institutions act as credible signals of durability beyond relaxing financial constraints, especially when loan terms align with claimed lifespans. These loans raise willingness to pay for lithium-ion batteries above viable market prices and substantially reduce projected lead-acid battery use, preventing more than 7,500 tons of lead waste in the first year. The results highlight credit design as a key lever for technology adoption in LMICs and a broader role of microfinance in addressing market failures where government regulation or nonprofit support is limited.",
+                paperUrl: "#",
+                zoomUrl: "https://cityu.zoom.us/j/82822000720"
+            },
+            {
+                date: "2026-02-20T11:00:00-05:00",
+                speaker: "Minjee Sun",
+                affiliation: "University of Iowa",
+                title: "TBD",
+                abstract: "Abstract and title to be announced.",
+                paperUrl: "#",
+                zoomUrl: "https://cityu.zoom.us/j/82822000720"
+            },
+            {
+                date: "2026-03-27T11:00:00-04:00",
+                speaker: "W. Jason Choi",
+                affiliation: "University of Maryland",
+                title: "TBD",
+                abstract: "Abstract and title to be announced.",
+                paperUrl: "#",
+                zoomUrl: "https://cityu.zoom.us/j/82822000720"
+            },
+            {
+                date: "2026-04-24T11:00:00-04:00",
+                speaker: "Industry Expert",
+                affiliation: "Industry Practitioner Session",
+                title: "Industry Insights",
+                abstract: "Details for the industry practitioner session will be provided soon.",
+                paperUrl: "#",
+                zoomUrl: "https://cityu.zoom.us/j/82822000720"
+            },
+            {
+                date: "2026-06-19T11:00:00-04:00",
+                speaker: "Ph.D. Student(s)",
+                affiliation: "Ph.D. Student",
+                title: "Ph.D. Practice Talk",
+                abstract: "Presentation details for the Ph.D. practice talk will be updated.",
+                paperUrl: "#",
+                zoomUrl: "https://cityu.zoom.us/j/82822000720"
+            },
+            {
+                date: "2026-06-26T11:00:00-04:00",
+                speaker: "Ph.D. Student(s)",
+                affiliation: "Ph.D. Student",
+                title: "Ph.D. Practice Talk (Tentative)",
+                abstract: "Presentation details for the Ph.D. practice talk will be updated.",
+                paperUrl: "#",
+                zoomUrl: "https://cityu.zoom.us/j/82822000720"
+            }	
         ];
 
         const pastSeminarData = [
-	    {
+            {
                 date: "2025-12-12T11:00:00-05:00",
                 speaker: "Woochoel Shin",
                 affiliation: "University of Florida",
-		discussant: "Soohyun Kim, Ph.D. Student at University of Southern California",		
+                discussant: "Soohyun Kim, Ph.D. Student at University of Southern California",		
                 title: "Does an Integrated Ad Management Platform Yield Better Results? Evidence from a Field Experiment in Search Advertising",
-                abstract: "Advertisers increasingly rely on an intermediary to coordinate and optimize campaign performance across multiple ad platforms. When the intermediary is owned by one of the competing ad platforms, an important question arises: can such an integrated intermediary improve the advertiser’s campaign outcomes by impartially managing campaigns across competing native platforms? We address this question through a 16-week, randomized field experiment in search advertising, where Search Ads 360 (SA360), owned by Google, manages campaigns on both Google and Bing. The results show that intermediary-managed campaigns generate more clicks but that the cost efficiency is comparable to directly managed campaigns. Moreover, within these campaigns, Microsoft Ads consistently delivers superior cost efficiency, while spending is disproportionately directed toward Google Ads, particularly under automated bidding. To understand the mechanisms and identify the conditions under which we may observe behavior consistent with the experimental evidence, we develop a theoretical model. Our analysis shows that the intermediary-managed campaigns yield more clicks when the cost of cross-platform integration is sufficiently low. Furthermore, while the intermediary may choose to deepen technological integration with its native platform, the competing platform can generate more clicks if its targetability is much higher, which may stem from better targeting technology or a thinner advertiser market on its platform. Even so, the intermediary may direct more spending to its own search engine if it takes into account its own profits in addition to the advertisers’.",
+                abstract: "Advertisers increasingly rely on an intermediary to coordinate and optimize campaign performance across multiple ad platforms...",
                 paperUrl: "#",
                 zoomUrl: "https://cityu.zoom.us/j/82822000720"
-            }, 	
+            },
             {
                 date: "2025-11-14T11:00:00-05:00",
                 speaker: "Hana Choi",
                 affiliation: "University of Rochester",
-                // discussant is missing
                 title: "Do Review Solicitations Elicit Reviews Where They Matter for Sales and Returns?",
-                abstract: "Firms solicit online reviews to enhance sales and reduce mismatches, yet it is unclear whether solicitations generate reviews where buyers benefit most, since they target reviewers while value accrues through buyers. Using rich individual-level panel data on transactions, reviews, and returns from a large apparel e-commerce retailer, we examine alignment between reviewer response and buyer value. Leveraging natural variation in solicitations, we estimate a two-stage framework: Stage 1 measures how solicitations affect review generation across informational states, and Stage 2 quantifies how these induced reviews influence subsequent sales and returns. Additional reviews increase sales and reduce return rates by up to 0.25 percentage points for products with zero-to-low prior reviews. However, solicitations face a first-review barrier, failing to elicit reviews in these high-value states, and thereby creating a reviewer-buyer misalignment. Counterfactual simulations indicate that raising first-review likelihood by two percentage points increases annual net revenue by $120 per product, highlighting the value of targeting zero-review products.",
+                abstract: "Firms solicit online reviews to enhance sales and reduce mismatches...",
                 paperUrl: "#",
                 zoomUrl: "https://cityu.zoom.us/j/82822000720"
-            },
-            {
-                date: "2025-10-17T11:00:00-04:00",
-                speaker: "Kyeongbin Kim",
-                affiliation: "University of Wisconsin",
-                discussant: "Enoch Hyunwook Kang, Ph.D. Student at University of Washington",
-                title: "Multi-Task Learning for Customer Base Analysis: Evidence from a Thousand Companies",
-                abstract: "Modeling customer-base activity is inherently a multi-objective problem. It requires understanding how many customers will be acquired over time, how many repeat purchases they will make, and how much they will spend per purchase (“upstream” prediction objectives), as well as how these behaviors aggregate into cohort- and company-level sales (“downstream” objectives). Many other empirical settings also present applied researchers with the challenge of modeling multiple processes alongside downstream outcomes that emerge from them. This paper introduces a flexible and unified generative multi-task learning framework tailored for panel data: the customer-based multi-task transformer (CBMT). The CBMT is designed to jointly project upstream and downstream outcomes. Our methodology balances generalization and specialization by leveraging commonalities across upstream customer behavior processes through shared layers, while enabling tailored predictions for each process via task-specific layers. By employing a multi-objective loss function that explicitly incorporates downstream objectives as auxiliary tasks, we achieve the “best of both worlds”: accurate predictions for each upstream outcome and strong goodness of fit for downstream outcomes. We validate the model using a unique dataset of approximately one thousand companies observed over a 37-month period. The CBMT significantly outperforms existing approaches, achieving higher predictive accuracy than 14 benchmark models across all upstream and downstream outcomes. For example, CBMT lowers company-level revenue prediction error by 34% to 65% over a temporal holdout period. We further provide insights into the drivers of this outperformance and examine conditions under which the model performs relatively better or worse through an ablation study and a heterogeneity analysis.",
-                paperUrl: "#",
-                zoomUrl: "https://cityu.zoom.us/j/82822000720"
-            },
-            {
-                date: "2025-09-26T11:30:00-04:00", // Use ISO 8601 format with timezone
-                speaker: "Tongil (TI) Kim",
-                affiliation: "University of Texas at Dallas",
-                discussant: "Bella (Yeolim) Yoon, Ph.D. Student at University of Minnesota",
-                title: "Got Chocolate Milk? School Flavored Milk Ban and its Impact on Retail Beverage Consumption",
-                abstract: "Do targeted school nutrition bans generate spillover effects on retail purchases that reinforce or undermine their intended health objectives? We investigate this question by examining the 2011 flavored milk ban (affecting products such as chocolate milk) implemented by the Los Angeles Unified School District (LAUSD). Using Nielsen retail scanner data and synthetic control methods, we estimate the spillover effects of this flavored milk ban on retail beverage purchases outside schools. We address three key questions: First, does the ban change retail purchases of the flavored milk? Second, does the ban generate unintended product substitution toward other beverages? Third, how do effects, if any, change when the ban is reversed? Our results show that the flavored milk ban decreased retail purchases by 8% within LAUSD boundaries, suggesting policy reinforcement. The ban did not significantly affect plain milk or soda consumption but led to a temporary 4.3% increase in juice purchases. The ban’s repeal five years later produced no significant behavioral changes. Additional analyses show effects were driven by negative publicity rather than product displacement. Moreover, increased juice consumption temporarily offset sugar reduction benefits outside schools, and protein intake decreased by 4.8%, revealing complex spillover effects with important policy and managerial implications.",
-                paperUrl: "#", // Link to PDF
-                zoomUrl: "https://cityu.zoom.us/j/88347992599"
             }
         ];
 
@@ -199,7 +220,7 @@
             {
                 name: "Mingyung Kim",
                 affiliation: "Ohio State University",
-                imageUrl: "https://s3.us-east-2.amazonaws.com/files.fisher.osu.edu/public/styles/profile_image_840/public/profile-images/Photo_MingyungKim_20241014_0.jpg?VersionId=LR0kJbti54aaggUIHao6pO7WSSUunA6R&h=52416502&itok=1Wy5FRgP"
+                imageUrl: "https://s3.us-east-2.amazonaws.com/files.fisher.osu.edu/public/styles/profile_image_840/public/profile-images/Photo_MingyungKim_20241014_0.jpg"
             },
             {
                 name: "Minkyu Shin",
@@ -208,16 +229,13 @@
             }
         ];
 
-        // --- CORE WEBSITE LOGIC (No need to edit below this line) ---
+        // --- CORE LOGIC ---
 
         document.addEventListener('DOMContentLoaded', function() {
             const navLinks = document.querySelectorAll('.nav-link');
             const contentSections = document.querySelectorAll('.content-section');
             const mainNav = document.getElementById('main-nav');
 
-            // --- Data Rendering ---
-
-            // Find the next upcoming seminar
             const now = new Date();
             const upcomingSeminars = seminarData.filter(s => new Date(s.date) >= now).sort((a, b) => new Date(a.date) - new Date(b.date));
             const nextSeminar = upcomingSeminars[0];
@@ -225,120 +243,67 @@
             function renderHomePage() {
                 const homeSection = document.getElementById('home');
                 if (!nextSeminar) {
-                    homeSection.innerHTML = `
-                        <div class="text-center bg-white p-8 rounded-lg shadow-md">
-                            <h2 class="text-3xl font-bold mb-4">Welcome!</h2>
-                            <p class="text-slate-600 text-lg">The schedule for the next season of seminars will be announced soon. Stay tuned!</p>
-                        </div>
-                    `;
+                    homeSection.innerHTML = `<div class="text-center bg-white p-8 rounded-lg shadow-md"><h2 class="text-3xl font-bold mb-4">Welcome!</h2><p class="text-slate-600 text-lg">The schedule for the next season will be announced soon.</p></div>`;
                     return;
                 }
 
                 const seminarDate = new Date(nextSeminar.date);
-                const dateTimeOptions = {
-                    weekday: 'long',
-                    year: 'numeric',
-                    month: 'long',
-                    day: 'numeric',
-                    hour: 'numeric',
-                    minute: '2-digit',
-                    timeZone: 'America/New_York',
-                    timeZoneName: 'short'
-                };
+                const dateTimeOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: '2-digit', timeZone: 'America/New_York', timeZoneName: 'short' };
                 const formattedDateTime = seminarDate.toLocaleString('en-US', dateTimeOptions);
 
-                // --- MODIFICATION START ---
-                // Logic to disable buttons if the link is a placeholder.
-                const isPaperAvailable = nextSeminar.paperUrl && nextSeminar.paperUrl !== '#';
                 const isZoomLinkAvailable = nextSeminar.zoomUrl && !nextSeminar.zoomUrl.includes('YOUR_ZOOM_ID');
-
-                // Define classes and attributes for the Paper button based on availability.
-                const paperButtonClasses = isPaperAvailable
-                    ? 'bg-indigo-600 text-white hover:bg-indigo-700'
-                    : 'bg-slate-400 text-slate-100 cursor-not-allowed'; // Added class for disabled appearance
-                const paperButtonAttributes = isPaperAvailable
-                    ? `href="${nextSeminar.paperUrl}" target="_blank"`
-                    : `href="#" onclick="return false;"`;
-
-                // Define classes and attributes for the Zoom button based on availability.
-                const zoomButtonClasses = isZoomLinkAvailable
-                    ? 'bg-green-500 text-white hover:bg-green-600'
-                    : 'bg-slate-400 text-slate-100 cursor-not-allowed';
-                const zoomButtonAttributes = isZoomLinkAvailable
-                    ? `href="${nextSeminar.zoomUrl}" target="_blank"`
-                    : `href="#" onclick="return false;"`;
-                // --- MODIFICATION END ---
-
+                const zoomButtonClasses = isZoomLinkAvailable ? 'bg-green-500 text-white hover:bg-green-600' : 'bg-slate-400 text-slate-100 cursor-not-allowed';
+                const zoomButtonAttributes = isZoomLinkAvailable ? `href="${nextSeminar.zoomUrl}" target="_blank"` : `href="#" onclick="return false;"`;
 
                 homeSection.innerHTML = `
                     <div class="bg-white p-6 md:p-8 rounded-lg shadow-md">
                         <h2 class="text-2xl md:text-3xl font-bold mb-2">Next Talk</h2>
                         <p class="text-lg text-slate-500 mb-6">${formattedDateTime}</p>
-
                         <div class="grid md:grid-cols-3 gap-6">
                             <div class="md:col-span-2">
                                 <h3 class="text-xl font-semibold text-indigo-700">${nextSeminar.title}</h3>
                                 <p class="text-xl font-semibold mt-4 mb-1">${nextSeminar.speaker}</p>
                                 <p class="text-medium text-slate-500 mb-1">${nextSeminar.affiliation}</p>
-
-                                ${nextSeminar.discussant ? `
-                                    <p class="text-medium text-slate-500 mb-4">
-                                        <span class="font-semibold">Discussant:</span> ${nextSeminar.discussant}
-                                    </p>
-                                ` : ''}
-
                                 <div id="abstract-container" class="mt-4">
                                     <p class="text-slate-600 text-justify">${nextSeminar.abstract}</p>
                                 </div>
                             </div>
                             <div class="md:col-span-1 flex flex-col space-y-3">
-                                
                                 <a ${zoomButtonAttributes} class="text-center w-full font-semibold py-2 px-4 rounded-lg transition-colors duration-300 ${zoomButtonClasses}">Join via Zoom</a>
                             </div>
                         </div>
                     </div>
                     <div class="text-center mt-8 p-6 bg-slate-50 rounded-lg">
                         <h3 class="text-medium font-semibold mb-2">Please join our mailing list for future updates.</h3>
-                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSclEvQ5M7wkh5AZhky0gVBLuCuPPnUSt-DL1xnyNDrzzGsB8A/viewform?usp=sharing&ouid=108774267862951597918" target="_blank" rel="noopener noreferrer" class="inline-block bg-sky-500 text-white font-semibold py-2 px-6 rounded-lg hover:bg-sky-600 transition-colors duration-300 shadow-sm">
-                            Sign Up
-                        </a>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSclEvQ5M7wkh5AZhky0gVBLuCuPPnUSt-DL1xnyNDrzzGsB8A/viewform" target="_blank" class="inline-block bg-sky-500 text-white font-semibold py-2 px-6 rounded-lg hover:bg-sky-600 transition-colors duration-300 shadow-sm">Sign Up</a>
                     </div>
                 `;
             }
 
-            // MODIFIED renderTable FUNCTION to consistently include and format the discussant column
             function renderTable(data, tbodyId) {
                 const tbody = document.getElementById(tbodyId);
-                tbody.innerHTML = ''; // Clear existing rows
-                // Both tables now have 4 columns
-                const colSpan = 4; 
+                tbody.innerHTML = ''; 
 
-                if (data.length === 0) {
-                    tbody.innerHTML = `<tr><td colspan="${colSpan}" class="text-center py-4 text-slate-500">No seminars to display.</td></tr>`;
-                    return;
-                }
                 data.forEach(seminar => {
                     const seminarDate = new Date(seminar.date);
-                    const formattedDate = seminarDate.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+                    // FORCE UTC to avoid local timezone date shifts in the list
+                    const formattedDate = seminarDate.toLocaleDateString('en-US', { 
+                        year: 'numeric', 
+                        month: 'short', 
+                        day: 'numeric', 
+                        timeZone: 'UTC' 
+                    });
 
-                    const isPostponed = seminar.status === 'postponed';
-                    const dateContent = isPostponed ? 'Postponed' : formattedDate;
-
-                    let displayDiscussant = seminar.discussant || ''; // Default to blank string if no discussant is assigned
-                    
-                    // Shorten the discussant name to the part before the first comma
+                    let displayDiscussant = seminar.discussant || ''; 
                     if (displayDiscussant.includes(',')) {
                         displayDiscussant = displayDiscussant.split(',')[0].trim();
                     }
 
-                    // Discussant cell is included unconditionally for all rows
-                    const discussantCell = `<td class="px-6 py-4 whitespace-nowrap text-sm text-slate-600">${displayDiscussant}</td>`;
-
                     const row = `
                         <tr>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-slate-900">${dateContent}</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-slate-900">${formattedDate}</td>
                             <td class="px-6 py-4 whitespace-nowrap text-sm text-slate-600">${seminar.speaker}</td>
-                            ${discussantCell}
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-slate-600">${displayDiscussant}</td>
                             <td class="px-6 py-4 text-sm text-slate-600">${seminar.title}</td>
                         </tr>
                     `;
@@ -350,69 +315,38 @@
                 const grid = document.getElementById('organizers-grid');
                 grid.innerHTML = '';
                 organizerData.forEach(organizer => {
-                    const card = `
+                    grid.innerHTML += `
                         <div class="bg-white rounded-lg shadow-md text-center p-6 transform hover:scale-105 transition-transform duration-300">
-                            <img src="${organizer.imageUrl}" alt="Photo of ${organizer.name}" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover border-4 border-slate-100" onerror="this.onerror=null;this.src='https://placehold.co/400x400/e2e8f0/64748b?text=Image';">
+                            <img src="${organizer.imageUrl}" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover border-4 border-slate-100" onerror="this.src='https://placehold.co/400x400/e2e8f0/64748b?text=Image';">
                             <h4 class="font-bold text-lg">${organizer.name}</h4>
                             <p class="text-sm text-slate-500">${organizer.affiliation}</p>
                         </div>
                     `;
-                    grid.innerHTML += card;
                 });
             }
 
-            // --- Navigation Logic ---
             function handleNav(e) {
-                // Use event delegation
                 if (!e.target.matches('.nav-link')) return;
-
                 e.preventDefault();
                 const targetId = e.target.dataset.target;
-
-                // Update nav link styles
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.dataset.target === targetId) {
-                        link.classList.add('active');
-                    }
-                });
-
-                // Show the correct content section
-                contentSections.forEach(section => {
-                    section.classList.remove('visible');
-                    if (section.id === targetId) {
-                        section.classList.add('visible');
-                    }
-                });
-
-                // Update URL hash without jumping
+                navLinks.forEach(link => link.classList.toggle('active', link.dataset.target === targetId));
+                contentSections.forEach(section => section.classList.toggle('visible', section.id === targetId));
                 history.pushState(null, null, `#${targetId}`);
             }
 
             mainNav.addEventListener('click', handleNav);
-
-            // Set footer year
             document.getElementById('current-year').textContent = new Date().getFullYear();
 
-            // Initial render
             renderHomePage();
             renderTable(upcomingSeminars, 'schedule-body');
             renderTable(pastSeminarData.sort((a,b) => new Date(b.date) - new Date(a.date)), 'past-body');
             renderOrganizers();
 
-            // Handle back/forward browser buttons
             window.addEventListener('popstate', () => {
                 const hash = window.location.hash.substring(1) || 'home';
                 const targetLink = document.querySelector(`.nav-link[data-target="${hash}"]`);
                 if (targetLink) targetLink.click();
             });
-
-            // Show correct section on initial load if hash is present
-            const initialHash = window.location.hash.substring(1);
-            if (initialHash) {
-                const targetLink = document.querySelector(`.nav-link[data-target="${initialHash}"]`);
-                if (targetLink) targetLink.click();
-            }
         });
     </script>
 </body>
