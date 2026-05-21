@@ -64,7 +64,7 @@
                     <table class="min-w-full divide-y divide-slate-200">
                         <thead class="bg-slate-50">
                             <tr>
-                                <th class="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">Date</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">Date / Time (New York Time)</th>
                                 <th class="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">Speaker</th>
                                 <th class="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">Discussant</th>
                                 <th class="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">Paper Title</th>
@@ -82,7 +82,7 @@
                     <table class="min-w-full divide-y divide-slate-200">
                         <thead class="bg-slate-50">
                             <tr>
-                                <th class="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">Date</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">Date / Time (New York Time)</th>
                                 <th class="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">Speaker</th>
                                 <th class="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">Discussant</th>
                                 <th class="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">Paper Title</th>
@@ -110,7 +110,7 @@
                         <h3 class="text-xl font-semibold mb-2">Structure</h3>
                         <ul class="list-disc pl-6 space-y-2">
                             <li><span class="font-medium">Virtual (Zoom) Format</span></li>
-                            <li><span class="font-medium">60-Minute Talk:</span> 45‑minute presentation, 15‑minute Q&A or discussion (with a PhD discussant).</li>
+                            <li><span class="font-medium">45-Minute Talk:</span> 45‑minute presentation followed by discussion / Q&A.</li>
                             <li><span class="font-medium">(Optional)</span> Informal conversation after each talk.</li>
                         </ul>
                     </div>
@@ -132,8 +132,69 @@
         // --- DATA SECTION ---
 
         const seminarData = [
-            
-            
+            {
+                date: "2026-06-17T12:00:00-04:00",
+                speaker: "Enoch Hyunwook Kang",
+                affiliation: "University of Washington",
+                discussant: "Q&A", 
+                title: "Personalized Alignment Revisited: The Necessity and Sufficiency of User Diversity",
+                abstract: "Presentation details for this talk will be updated.",
+                paperUrl: "#",
+                zoomUrl: "https://cityu.zoom.us/j/82822000720"
+            },
+            {
+                date: "2026-06-17T12:45:00-04:00",
+                speaker: "Chaewon Seol",
+                affiliation: "Purdue University",
+                discussant: "Q&A", 
+                title: "Trajectory Matters: Retail Exposure and Youth Protection in Legal Cannabis Markets",
+                abstract: "Presentation details for this talk will be updated.",
+                paperUrl: "#",
+                zoomUrl: "https://cityu.zoom.us/j/82822000720"
+            },
+            {
+                date: "2026-06-17T13:30:00-04:00",
+                speaker: "Jungeun Lim",
+                affiliation: "University of Wisconsin-Madison",
+                discussant: "Q&A", 
+                title: "Deconstructing the Roles of Brand, Design, and Consistency in Consumer Choice with Generative AI",
+                abstract: "Presentation details for this talk will be updated.",
+                paperUrl: "#",
+                zoomUrl: "https://cityu.zoom.us/j/82822000720"
+            },
+            {
+                date: "2026-06-24T12:00:00-04:00",
+                speaker: "Cheolho Song",
+                affiliation: "Washington University in St. Louis",
+                discussant: "Q&A", 
+                title: "The Effects of Mall-Wide Promotions on Customer Shopping Decisions: A Double Machine Learning Approach",
+                abstract: "Presentation details for this talk will be updated.",
+                paperUrl: "#",
+                zoomUrl: "https://cityu.zoom.us/j/82822000720"
+            },
+            {
+                date: "2026-06-24T12:45:00-04:00",
+                speaker: "Jee Hae Ha",
+                affiliation: "University of California Irvine",
+                discussant: "Q&A", 
+                title: "AI–Human Collaboration in Medical Diagnosis: A Hierarchical Bayesian Structural Approach",
+                abstract: "Presentation details for this talk will be updated.",
+                paperUrl: "#",
+                zoomUrl: "https://cityu.zoom.us/j/82822000720"
+            }
+        ];
+
+        const pastSeminarData = [
+            {
+                date: "2026-05-15T12:00:00-04:00",
+                speaker: "Jungju Yu",
+                affiliation: "Seoul National University",
+                discussant: "more Q&A", 
+                title: "Opaque Auctions: Value of Information and Transparency in Ad Auctions",
+                abstract: "Online advertising markets exhibit two characteristic features: opacity in the platform's allocation process and two-sided information asymmetry...",
+                paperUrl: "#",
+                zoomUrl: "https://cityu.zoom.us/j/82822000720"
+            },
             {
                 date: "2026-04-17T12:00:00-04:00",
                 speaker: "Hayoung Cheon",
@@ -145,43 +206,12 @@
                 zoomUrl: "https://cityu.zoom.us/j/82822000720"
             },
             {
-                date: "2026-05-15T12:00:00-04:00",
-                speaker: "Jungju Yu",
-                affiliation: "Seoul National University",
-                discussant: "more Q&A", 
-                title: "Opaque Auctions: Value of Information and Transparency in Ad Auctions",
-                abstract: "Online advertising markets exhibit two characteristic features: opacity in the platform's allocation process and two-sided information asymmetry, whereby platforms observe user engagement data unknown to advertisers while advertisers possess private business valuations unknown to the platform. In standard auction settings with commitment power, stakeholders can credibly share private information to improve market efficiency. However, in the absence of commitment, as is characteristic of opaque programmatic advertising markets, information cannot always be communicated credibly, since the platform can deviate undetected from any announced strategy. We develop a model that captures both features and derive the following results. First, the platform optimally excludes some advertisers from the auction: selective invitation serves as a credible signal about conversion quality, inducing invited advertisers to bid more aggressively. When either the platform or the advertisers have full information, inviting all advertisers is optimal. Second, acquiring the advertisers' private information can harm the platform by undermining the credibility of this signaling mechanism, a phenomenon absent under the case with platform's commitment. Third, market size affects information incentives in a nuanced way. In large markets, incentives are aligned: the platform prefers to share its engagement data but not to learn advertisers' valuations, and advertisers prefer to access platform data but withhold their own. In small markets, incentives are misaligned along both dimensions, as each side wants to learn what the other is unwilling to disclose.",
-                paperUrl: "#",
-                zoomUrl: "https://cityu.zoom.us/j/82822000720"
-            },
-            {
-                date: "2026-06-17T11:00:00-04:00",
-                speaker: "Ph.D. Student(s)",
-                affiliation: "Ph.D. Student",
-                title: "Ph.D. Practice Talk",
-                abstract: "Presentation details for the Ph.D. practice talk will be updated.",
-                paperUrl: "#",
-                zoomUrl: "https://cityu.zoom.us/j/82822000720"
-            },
-            {
-                date: "2026-06-24T11:00:00-04:00",
-                speaker: "Ph.D. Student(s)",
-                affiliation: "Ph.D. Student",
-                title: "Ph.D. Practice Talk (Tentative)",
-                abstract: "Presentation details for the Ph.D. practice talk will be updated.",
-                paperUrl: "#",
-                zoomUrl: "https://cityu.zoom.us/j/82822000720"
-            }	
-        ];
-
-        const pastSeminarData = [
-            {
                 date: "2026-03-27T12:00:00-04:00",
                 speaker: "W. Jason Choi",
                 affiliation: "University of Maryland",
                 discussant: "more Q&A", 
                 title: "When Learning Increases Uncertainty: A Model of Multidimensional Consumer Evaluation",
-                abstract: "Consumers often learn about products in environments where uncertainty is multidimensional: they face orthogonal sources of uncertainty, about attribute levels (what the product delivers) and about attribute importance (how attributes map into value). In such settings, learning can have a counterintuitive consequence. Resolving one uncertainty can increase overall uncertainty in the consumer’s valuation by amplifying the relevance of the unknown dimension. We develop a Bayesian model of consumer evaluation in which utility is a weighted combination of multiple attributes, where both the weight and at least one attribute level are initially uncertain. The consumer can acquire information about either the weight or the uncertain attribute at a cost before deciding whether to purchase. In benchmark environments with only attribute uncertainty, information acquisition monotonically reduces uncertainty. In contrast, with both weight and attribute uncertainty, equilibrium learning can increase ex post uncertainty for intermediate information costs, even though each learning action is individually informative. We interpret this mechanism as a rational foundation for a Dunning-Kruger type pattern in consumer confidence: a coarse early assessment can feel decisive, while further learning can reveal that what remains unknown is precisely what matters most, lowering confidence. We discuss implications for information design, including what to disclose first and when transparency can backfire.",
+                abstract: "Consumers often learn about products in environments where uncertainty is multidimensional...",
                 paperUrl: "#",
                 zoomUrl: "https://cityu.zoom.us/j/82822000720"
             },
@@ -191,7 +221,7 @@
                 affiliation: "University of Iowa",
                 discussant: "more Q&A", 
                 title: "To Change or Not to Change: When and How Creators Should Respond to Customer Feedback?",
-                abstract: "This research investigates how producers’ content revisions made in the presence of customer feedback relate to subsequent market outcomes. We use a comprehensive dataset from a large webnovel platform that records daily snapshots of episode texts alongside the full set of reader comments during a contest period, allowing us to track when episode modifications occur, the extent of each modification, and the number and types of comments visible prior to revision. Grounded in Feedback Intervention Theory and the Accessibility-Diagnosticity Framework, we classify customer feedback as task-diagnostic, self-focused, non-diagnostic, and combinations thereof. To quantify these relationships, we employ a newly developed machine learning approach for estimating heterogeneous treatment effects in panel data, which models the association between modifications and outcomes conditional on reader feedback while instrumenting for writer’s modification decisions. We find that responses to task-diagnostic feedback do not improve performance, whereas revisions following noisy or self-focused feedback, as well as combinations of the two, are associated with lower market outcomes. Moreover, these effects vary systematically with writer experience, suggesting that expertise shapes how producers interpret and act on consumer feedback. Together, these findings demonstrate that not all feedback is beneficial and that the performance consequences of responding to feedback depend on both feedback content and producer characteristics, offering implications for creators and platform managers seeking to leverage user input effectively.",
+                abstract: "This research investigates how producers’ content revisions made in the presence of customer feedback relate to subsequent market outcomes...",
                 paperUrl: "#",
                 zoomUrl: "https://osu.zoom.us/j/97929260403?pwd=EH2bRQhEOjcTf93KbsNY5mWFY4PmNV.1"
             },
@@ -201,7 +231,7 @@
                 affiliation: "Stanford University",
                 discussant: "Jane Lee, Ph.D. Student at Texas A&M University", 
                 title: "Marketing Durable and Sustainable Technologies in Low- and Middle-Income Countries",
-                abstract: "We examine barriers to - and market-based solutions for - adopting durable and sustainable technologies in low- and middle-income countries (LMICs), focusing on lithium-ion batteries for electric three-wheelers in Bangladesh. Despite clear environmental and private benefits, lithium-ion batteries hold a minimal market share, with the market dominated by short-lived lead-acid batteries whose recycling generates severe lead pollution. An incentivized field experiment and surveys show that low trust in manufacturers’ claims, along with financial constraints and other factors that reduce the value of future battery use (e.g., high salvage value, high business uncertainty), depress willingness to pay for durable batteries and limit the effectiveness of warranties and related services. We find that product-specific loans from local financial institutions act as credible signals of durability beyond relaxing financial constraints, especially when loan terms align with claimed lifespans. These loans raise willingness to pay for lithium-ion batteries above viable market prices and substantially reduce projected lead-acid battery use, preventing more than 7,500 tons of lead waste in the first year. The results highlight credit design as a key lever for technology adoption in LMICs and a broader role of microfinance in addressing market failures where government regulation or nonprofit support is limited.",
+                abstract: "We examine barriers to - and market-based solutions for - adopting durable and sustainable technologies...",
                 paperUrl: "#",
                 zoomUrl: "https://cityu.zoom.us/j/82822000720"
             },
@@ -231,7 +261,7 @@
                 affiliation: "University of Wisconsin",
                 discussant: "Enoch Hyunwook Kang, Ph.D. Student at University of Washington",
                 title: "Multi-Task Learning for Customer Base Analysis: Evidence from a Thousand Companies",
-                abstract: "Modeling customer-base activity is inherently a multi-objective problem. It requires understanding how many customers will be acquired over time, how many repeat purchases they will make, and how much they will spend per purchase (“upstream” prediction objectives), as well as how these behaviors aggregate into cohort- and company-level sales (“downstream” objectives). Many other empirical settings also present applied researchers with the challenge of modeling multiple processes alongside downstream outcomes that emerge from them. This paper introduces a flexible and unified generative multi-task learning framework tailored for panel data: the customer-based multi-task transformer (CBMT). The CBMT is designed to jointly project upstream and downstream outcomes. Our methodology balances generalization and specialization by leveraging commonalities across upstream customer behavior processes through shared layers, while enabling tailored predictions for each process via task-specific layers. By employing a multi-objective loss function that explicitly incorporates downstream objectives as auxiliary tasks, we achieve the “best of both worlds”: accurate predictions for each upstream outcome and strong goodness of fit for downstream outcomes. We validate the model using a unique dataset of approximately one thousand companies observed over a 37-month period. The CBMT significantly outperforms existing approaches, achieving higher predictive accuracy than 14 benchmark models across all upstream and downstream outcomes. For example, CBMT lowers company-level revenue prediction error by 34% to 65% over a temporal holdout period. We further provide insights into the drivers of this outperformance and examine conditions under which the model performs relatively better or worse through an ablation study and a heterogeneity analysis.",
+                abstract: "Modeling customer-base activity is inherently a multi-objective problem...",
                 paperUrl: "#",
                 zoomUrl: "https://cityu.zoom.us/j/82822000720"
             },
@@ -241,7 +271,7 @@
                 affiliation: "University of Texas at Dallas",
                 discussant: "Bella (Yeolim) Yoon, Ph.D. Student at University of Minnesota",
                 title: "Got Chocolate Milk? School Flavored Milk Ban and its Impact on Retail Beverage Consumption",
-                abstract: "Do targeted school nutrition bans generate spillover effects on retail purchases that reinforce or undermine their intended health objectives? We investigate this question by examining the 2011 flavored milk ban (affecting products such as chocolate milk) implemented by the Los Angeles Unified School District (LAUSD). Using Nielsen retail scanner data and synthetic control methods, we estimate the spillover effects of this flavored milk ban on retail beverage purchases outside schools. We address three key questions: First, does the ban change retail purchases of the flavored milk? Second, does the ban generate unintended product substitution toward other beverages? Third, how do effects, if any, change when the ban is reversed? Our results show that the flavored milk ban decreased retail purchases by 8% within LAUSD boundaries, suggesting policy reinforcement. The ban did not significantly affect plain milk or soda consumption but led to a temporary 4.3% increase in juice purchases. The ban’s repeal five years later produced no significant behavioral changes. Additional analyses show effects were driven by negative publicity rather than product displacement. Moreover, increased juice consumption temporarily offset sugar reduction benefits outside schools, and protein intake decreased by 4.8%, revealing complex spillover effects with important policy and managerial implications.",
+                abstract: "Do targeted school nutrition bans generate spillover effects on retail purchases...",
                 paperUrl: "#",
                 zoomUrl: "https://cityu.zoom.us/j/88347992599"
             }
@@ -274,46 +304,90 @@
 
             const now = new Date();
             const upcomingSeminars = seminarData.filter(s => new Date(s.date) >= now).sort((a, b) => new Date(a.date) - new Date(b.date));
-            const nextSeminar = upcomingSeminars[0];
 
             function renderHomePage() {
                 const homeSection = document.getElementById('home');
-                if (!nextSeminar) {
+                if (upcomingSeminars.length === 0) {
                     homeSection.innerHTML = `<div class="text-center bg-white p-8 rounded-lg shadow-md"><h2 class="text-3xl font-bold mb-4">Welcome!</h2><p class="text-slate-600 text-lg">The schedule for the next season will be announced soon.</p></div>`;
                     return;
                 }
 
-                const seminarDate = new Date(nextSeminar.date);
-                const dateTimeOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: '2-digit', timeZone: 'America/New_York', timeZoneName: 'short' };
-                const formattedDateTime = seminarDate.toLocaleString('en-US', dateTimeOptions);
+                // Group June 17th speakers together for Day 1 overview on Home
+                const day1Speakers = upcomingSeminars.filter(s => s.date.startsWith("2026-06-17"));
+                
+                let day1ContentHtml = '';
+                let zoomUrlToUse = 'https://cityu.zoom.us/j/82822000720';
 
-                const isZoomLinkAvailable = nextSeminar.zoomUrl && !nextSeminar.zoomUrl.includes('YOUR_ZOOM_ID');
-                const zoomButtonClasses = isZoomLinkAvailable ? 'bg-green-500 text-white hover:bg-green-600' : 'bg-slate-400 text-slate-100 cursor-not-allowed';
-                const zoomButtonAttributes = isZoomLinkAvailable ? `href="${nextSeminar.zoomUrl}" target="_blank"` : `href="#" onclick="return false;"`;
+                if (day1Speakers.length > 0) {
+                    zoomUrlToUse = day1Speakers[0].zoomUrl;
+                    day1ContentHtml = `
+                        <div class="bg-white p-6 md:p-8 rounded-lg shadow-md mb-6">
+                            <h2 class="text-2xl md:text-3xl font-bold mb-2">Job Market Practice Talks: Day 1</h2>
+                            <p class="text-lg text-indigo-600 font-semibold mb-6">Wednesday, June 17, 2026 (New York Time)</p>
+                            
+                            <div class="grid md:grid-cols-3 gap-8">
+                                <div class="md:col-span-2 space-y-8 divide-y divide-slate-100">
+                    `;
 
-                homeSection.innerHTML = `
-                    <div class="bg-white p-6 md:p-8 rounded-lg shadow-md">
-                        <h2 class="text-2xl md:text-3xl font-bold mb-2">Next Talk</h2>
-                        <p class="text-lg text-slate-500 mb-6">${formattedDateTime}</p>
-                        <div class="grid md:grid-cols-3 gap-6">
-                            <div class="md:col-span-2">
-                                <h3 class="text-xl font-semibold text-indigo-700">${nextSeminar.title}</h3>
-                                <p class="text-xl font-semibold mt-4 mb-1">${nextSeminar.speaker}</p>
-                                <p class="text-medium text-slate-500 mb-1">${nextSeminar.affiliation}</p>
-                                <div id="abstract-container" class="mt-4">
-                                    <p class="text-slate-600 text-justify">${nextSeminar.abstract}</p>
+                    day1Speakers.forEach((seminar, idx) => {
+                        const seminarDate = new Date(seminar.date);
+                        const formattedTime = seminarDate.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', timeZone: 'America/New_York' });
+                        const paddingTop = idx > 0 ? 'pt-6' : '';
+
+                        day1ContentHtml += `
+                            <div class="${paddingTop}">
+                                <span class="inline-block bg-slate-100 text-slate-700 text-xs px-2.5 py-1 rounded-full font-semibold mb-2">${formattedTime} NY Time</span>
+                                <h3 class="text-xl font-semibold text-slate-900 mb-1">${seminar.title}</h3>
+                                <p class="text-medium font-medium text-indigo-700">${seminar.speaker} <span class="text-slate-500 font-normal">(${seminar.affiliation})</span></p>
+                            </div>
+                        `;
+                    });
+
+                    day1ContentHtml += `
+                                </div>
+                                <div class="md:col-span-1 flex flex-col justify-start">
+                                    <div class="bg-slate-50 p-4 rounded-lg border border-slate-100 sticky top-24">
+                                        <p class="text-sm text-slate-500 mb-3 font-medium">All Day 1 presentations use the same link:</p>
+                                        <a href="${zoomUrlToUse}" target="_blank" class="block text-center w-full bg-green-500 text-white hover:bg-green-600 font-semibold py-2.5 px-4 rounded-lg transition-colors duration-300 shadow-sm">Join Day 1 via Zoom</a>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="md:col-span-1 flex flex-col space-y-3">
-                                <a ${zoomButtonAttributes} class="text-center w-full font-semibold py-2 px-4 rounded-lg transition-colors duration-300 ${zoomButtonClasses}">Join via Zoom</a>
+                        </div>
+                    `;
+                } else {
+                    // Fallback to traditional individual format if June 17th layout passes
+                    const nextSeminar = upcomingSeminars[0];
+                    const seminarDate = new Date(nextSeminar.date);
+                    const dateTimeOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: '2-digit', timeZone: 'America/New_York' };
+                    const formattedDateTime = seminarDate.toLocaleString('en-US', dateTimeOptions) + " (New York Time)";
+
+                    day1ContentHtml = `
+                        <div class="bg-white p-6 md:p-8 rounded-lg shadow-md">
+                            <h2 class="text-2xl md:text-3xl font-bold mb-2">Next Talk</h2>
+                            <p class="text-lg text-slate-500 mb-6">${formattedDateTime}</p>
+                            <div class="grid md:grid-cols-3 gap-6">
+                                <div class="md:col-span-2">
+                                    <h3 class="text-xl font-semibold text-indigo-700">${nextSeminar.title}</h3>
+                                    <p class="text-xl font-semibold mt-4 mb-1">${nextSeminar.speaker}</p>
+                                    <p class="text-medium text-slate-500 mb-1">${nextSeminar.affiliation}</p>
+                                </div>
+                                <div class="md:col-span-1 flex flex-col space-y-3">
+                                    <a href="${nextSeminar.zoomUrl}" target="_blank" class="text-center w-full font-semibold py-2 px-4 rounded-lg transition-colors duration-300 bg-green-500 text-white hover:bg-green-600">Join via Zoom</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    `;
+                }
+
+                // Add mailing list button onto the base layout
+                day1ContentHtml += `
                     <div class="text-center mt-8 p-6 bg-slate-50 rounded-lg">
                         <h3 class="text-medium font-semibold mb-2">Please join our mailing list for future updates.</h3>
                         <a href="https://docs.google.com/forms/d/e/1FAIpQLSclEvQ5M7wkh5AZhky0gVBLuCuPPnUSt-DL1xnyNDrzzGsB8A/viewform" target="_blank" class="inline-block bg-sky-500 text-white font-semibold py-2 px-6 rounded-lg hover:bg-sky-600 transition-colors duration-300 shadow-sm">Sign Up</a>
                     </div>
                 `;
+
+                homeSection.innerHTML = day1ContentHtml;
             }
 
             function renderTable(data, tbodyId) {
@@ -322,33 +396,34 @@
 
                 data.forEach(seminar => {
                     const seminarDate = new Date(seminar.date);
-                    // FORCE UTC to avoid local timezone date shifts in the list
+                    
                     const formattedDate = seminarDate.toLocaleDateString('en-US', { 
                         year: 'numeric', 
                         month: 'short', 
                         day: 'numeric', 
-                        timeZone: 'UTC' 
+                        timeZone: 'America/New_York' 
+                    });
+                    
+                    const formattedTime = seminarDate.toLocaleTimeString('en-US', {
+                        hour: 'numeric',
+                        minute: '2-digit',
+                        timeZone: 'America/New_York'
                     });
 
-                    // LOGIC FOR DISCUSSANT SPLITTING
-                    let discussantName = '';
+                    let discussantName = seminar.discussant || '';
                     let discussantAffiliation = '';
-
-                    if (seminar.discussant) {
-                        // Split by the first comma found
-                        const firstCommaIndex = seminar.discussant.indexOf(',');
-                        if (firstCommaIndex !== -1) {
-                            discussantName = seminar.discussant.substring(0, firstCommaIndex).trim();
-                            discussantAffiliation = seminar.discussant.substring(firstCommaIndex + 1).trim();
-                        } else {
-                            // If no comma, assume it is just a name
-                            discussantName = seminar.discussant;
-                        }
+                    const firstCommaIndex = discussantName.indexOf(',');
+                    if (firstCommaIndex !== -1) {
+                        discussantName = seminar.discussant.substring(0, firstCommaIndex).trim();
+                        discussantAffiliation = seminar.discussant.substring(firstCommaIndex + 1).trim();
                     }
 
                     const row = `
                         <tr>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-slate-900">${formattedDate}</td>
+                            <td class="px-6 py-4 text-sm font-medium text-slate-900">
+                                <div>${formattedDate}</div>
+                                <div class="text-xs text-indigo-500 font-normal mt-0.5">${formattedTime}</div>
+                            </td>
                             <td class="px-6 py-4 text-sm text-slate-600">
                                 <div class="font-medium text-slate-900">${seminar.speaker}</div>
                                 <div class="text-xs text-slate-500 mt-0.5">${seminar.affiliation}</div>
@@ -357,7 +432,7 @@
                                 <div class="font-medium text-slate-900">${discussantName}</div>
                                 ${discussantAffiliation ? `<div class="text-xs text-slate-500 mt-0.5">${discussantAffiliation}</div>` : ''}
                             </td>
-                            <td class="px-6 py-4 text-sm text-slate-600">${seminar.title}</td>
+                            <td class="px-6 py-4 text-sm text-slate-600 font-medium">${seminar.title}</td>
                         </tr>
                     `;
                     tbody.innerHTML += row;
@@ -403,15 +478,4 @@
         });
     </script>
 </body>
-
 </html>
-
-
-
-
-
-
-
-
-
-
