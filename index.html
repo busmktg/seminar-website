@@ -312,57 +312,65 @@
                     homeSection.innerHTML = `<div class="text-center bg-white p-8 rounded-lg shadow-md"><h2 class="text-3xl font-bold mb-4">Welcome!</h2><p class="text-slate-600 text-lg">The schedule for the next season will be announced soon.</p></div>`;
                     return;
                 }
-
-                // Group June 17th speakers together for Day 1 overview on Home
-                const day1Speakers = upcomingSeminars.filter(s => s.date.startsWith("2026-06-17"));
+            
+                // 1. Dynamically get the date prefix (YYYY-MM-DD) of the very next seminar
+                const nextDatePrefix = upcomingSeminars[0].date.split('T')[0];
                 
-                let day1ContentHtml = '';
+                // 2. Group all speakers that share this exact date
+                const daySpeakers = upcomingSeminars.filter(s => s.date.startsWith(nextDatePrefix));
+                
+                let dayContentHtml = '';
                 let zoomUrlToUse = 'https://cityu.zoom.us/j/82822000720';
-
-                if (day1Speakers.length > 0) {
-                    zoomUrlToUse = day1Speakers[0].zoomUrl;
-                    day1ContentHtml = `
+            
+                // Format the date dynamically for the header
+                const displayDate = new Date(daySpeakers[0].date).toLocaleString('en-US', { 
+                    weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', timeZone: 'America/New_York' 
+                });
+            
+                if (daySpeakers.length > 1) { // Multiple speakers on the same day
+                    zoomUrlToUse = daySpeakers[0].zoomUrl;
+                    dayContentHtml = `
                         <div class="bg-white p-6 md:p-8 rounded-lg shadow-md mb-6">
-                            <h2 class="text-2xl md:text-3xl font-bold mb-2">Job Market Practice Talks: Day 1</h2>
-                            <p class="text-lg text-indigo-600 font-semibold mb-6">Wednesday, June 17, 2026 (Eastern Time)</p>
+                            <h2 class="text-2xl md:text-3xl font-bold mb-2">Job Market Practice Talks</h2>
+                            <p class="text-lg text-indigo-600 font-semibold mb-6">${displayDate} (Eastern Time)</p>
                             
                             <div class="grid md:grid-cols-3 gap-8">
                                 <div class="md:col-span-2 space-y-8 divide-y divide-slate-100">
                     `;
-
-                    day1Speakers.forEach((seminar, idx) => {
+            
+                    daySpeakers.forEach((seminar, idx) => {
                         const seminarDate = new Date(seminar.date);
                         const formattedTime = seminarDate.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', timeZone: 'America/New_York' });
                         const paddingTop = idx > 0 ? 'pt-6' : '';
-
-                        day1ContentHtml += `
-                            <div class="${paddingTop}">
-                                <span class="inline-block bg-slate-100 text-slate-700 text-xs px-2.5 py-1 rounded-full font-semibold mb-2">${formattedTime} Eastern time</span>
-                                <h3 class="text-xl font-semibold text-slate-900 mb-1">${seminar.title}</h3>
-                                <p class="text-medium font-medium text-indigo-700">${seminar.speaker} <span class="text-slate-500 font-normal">(${seminar.affiliation})</span></p>
-                            </div>
+            
+                        dayContentHtml += `
+                                    <div class="${paddingTop}">
+                                        <span class="inline-block bg-slate-100 text-slate-700 text-xs px-2.5 py-1 rounded-full font-semibold mb-2">${formattedTime} Eastern time</span>
+                                        <h3 class="text-xl font-semibold text-slate-900 mb-1">${seminar.title}</h3>
+                                        <p class="text-medium font-medium text-indigo-700">${seminar.speaker} <span class="text-slate-500 font-normal">(${seminar.affiliation})</span></p>
+                                    </div>
                         `;
                     });
-
-                    day1ContentHtml += `
+            
+                    dayContentHtml += `
                                 </div>
                                 <div class="md:col-span-1 flex flex-col justify-start">
                                     <div class="bg-slate-50 p-4 rounded-lg border border-slate-100 sticky top-24">
-                                        <p class="text-sm text-slate-500 mb-3 font-medium">All Day 1 presentations use the same link:</p>
-                                        <a href="${zoomUrlToUse}" target="_blank" class="block text-center w-full bg-green-500 text-white hover:bg-green-600 font-semibold py-2.5 px-4 rounded-lg transition-colors duration-300 shadow-sm">Join Day 1 via Zoom</a>
+                                        <p class="text-sm text-slate-500 mb-3 font-medium">All presentations use the same link:</p>
+                                        <a href="${zoomUrlToUse}" target="_blank" class="block text-center w-full bg-green-500 text-white hover:bg-green-600 font-semibold py-2.5 px-4 rounded-lg transition-colors duration-300 shadow-sm">Join via Zoom</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     `;
                 } else {
-                    // Fallback to traditional individual format if June 17th layout passes
-                    const nextSeminar = upcomingSeminars[0];
+                    // Fallback for days with only a single speaker
+                    const nextSeminar = daySpeakers[0];
                     const seminarDate = new Date(nextSeminar.date);
                     const dateTimeOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: '2-digit', timeZone: 'America/New_York' };
                     const formattedDateTime = seminarDate.toLocaleString('en-US', dateTimeOptions) + " (Eastern Time)";
-
-                    day1ContentHtml = `
+            
+                    dayContentHtml = `
                         <div class="bg-white p-6 md:p-8 rounded-lg shadow-md">
                             <h2 class="text-2xl md:text-3xl font-bold mb-2">Next Talk</h2>
                             <p class="text-lg text-slate-500 mb-6">${formattedDateTime}</p>
@@ -379,18 +387,17 @@
                         </div>
                     `;
                 }
-
+            
                 // Add mailing list button onto the base layout
-                day1ContentHtml += `
+                dayContentHtml += `
                     <div class="text-center mt-8 p-6 bg-slate-50 rounded-lg">
                         <h3 class="text-medium font-semibold mb-2">Please join our mailing list for future updates.</h3>
                         <a href="https://docs.google.com/forms/d/e/1FAIpQLSclEvQ5M7wkh5AZhky0gVBLuCuPPnUSt-DL1xnyNDrzzGsB8A/viewform" target="_blank" class="inline-block bg-sky-500 text-white font-semibold py-2 px-6 rounded-lg hover:bg-sky-600 transition-colors duration-300 shadow-sm">Sign Up</a>
                     </div>
                 `;
-
-                homeSection.innerHTML = day1ContentHtml;
+            
+                homeSection.innerHTML = dayContentHtml;
             }
-
             function renderTable(data, tbodyId) {
                 const tbody = document.getElementById(tbodyId);
                 tbody.innerHTML = ''; 
