@@ -1,138 +1,7 @@
-<!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Business and Marketing Analytics Seminar</title>
-
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f8fafc; /* slate-50 */
-        }
-        /* Style for the active navigation link */
-        .nav-link.active {
-            color: #4f46e5; /* indigo-600 */
-            font-weight: 600;
-            border-bottom: 2px solid #4f46e5;
-        }
-        /* Simple transition for section visibility */
-        .content-section {
-            display: none;
-            animation: fadeIn 0.5s ease-in-out;
-        }
-        .content-section.visible {
-            display: block;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-    </style>
-</head>
-<body class="text-slate-800">
-
-    <div class="container mx-auto max-w-6xl px-4 py-8">
-
-        <header class="bg-white/80 backdrop-blur-lg sticky top-0 z-10 rounded-lg shadow-sm mb-8">
-            <div class="flex flex-col md:flex-row items-center justify-between p-4">
-                <h1 class="text-2xl font-bold text-indigo-600 mb-4 md:mb-0">
-                    Business and Marketing Analytics Seminar
-                </h1>
-                <nav id="main-nav" class="flex flex-wrap justify-center space-x-4 md:space-x-6">
-                    <a href="#home" class="nav-link active px-2 py-1 text-slate-600 hover:text-indigo-600 transition-colors duration-300" data-target="home">Home</a>
-                    <a href="#schedule" class="nav-link px-2 py-1 text-slate-600 hover:text-indigo-600 transition-colors duration-300" data-target="schedule">Schedule</a>
-                    <a href="#past" class="nav-link px-2 py-1 text-slate-600 hover:text-indigo-600 transition-colors duration-300" data-target="past">Past Talks</a>
-                    <a href="#organizers" class="nav-link px-2 py-1 text-slate-600 hover:text-indigo-600 transition-colors duration-300" data-target="organizers">Information</a>
-                </nav>
-            </div>
-        </header>
-
-        <main id="main-content">
-            <section id="home" class="content-section visible">
-                </section>
-
-            <section id="schedule" class="content-section">
-                <h2 class="text-3xl font-bold mb-6 text-center">Upcoming Talks</h2>
-                <div class="bg-white p-6 rounded-lg shadow-md overflow-x-auto">
-                    <table class="min-w-full divide-y divide-slate-200">
-                        <thead class="bg-slate-50">
-                            <tr>
-                                <th class="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">Date / Time (Eastern Time)</th>
-                                <th class="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">Speaker</th>
-                                <th class="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">Discussant</th>
-                                <th class="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">Paper Title</th>
-                            </tr>
-                        </thead>
-                        <tbody id="schedule-body" class="bg-white divide-y divide-200">
-                            </tbody>
-                    </table>
-                </div>
-            </section>
-
-            <section id="past" class="content-section">
-                <h2 class="text-3xl font-bold mb-6 text-center">Past Talks</h2>
-                <div class="bg-white p-6 rounded-lg shadow-md overflow-x-auto">
-                    <table class="min-w-full divide-y divide-slate-200">
-                        <thead class="bg-slate-50">
-                            <tr>
-                                <th class="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">Date / Time (Eastern Time)</th>
-                                <th class="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">Speaker</th>
-                                <th class="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">Discussant</th>
-                                <th class="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">Paper Title</th>
-                            </tr>
-                        </thead>
-                        <tbody id="past-body" class="bg-white divide-y divide-slate-200">
-                            </tbody>
-                    </table>
-                </div>
-            </section>
-
-            <section id="organizers" class="content-section">
-                <h2 class="text-3xl font-bold mb-4 text-center">Seminar Information</h2>
-                <div class="bg-white p-6 md:p-8 rounded-lg shadow-md mb-10 max-w-4xl mx-auto text-slate-700 space-y-4">
-                    <p>The Business and Marketing Analytics Seminar has the following objectives and structure:</p>
-                    <div>
-                        <h3 class="text-xl font-semibold mb-2">Objectives</h3>
-                        <ul class="list-disc pl-6 space-y-2">
-                            <li><span class="font-medium">Promote research:</span> Present papers, share comments and feedback, and develop new ideas.</li>
-                            <li><span class="font-medium">Support PhD students:</span> Provide an opportunity to discuss papers, offer guidance on their research and academic journey.</li>
-                            <li><span class="font-medium">Build a community:</span> Provide networking opportunities, foster research collaboration, and create a supportive environment.</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h3 class="text-xl font-semibold mb-2">Structure</h3>
-                        <ul class="list-disc pl-6 space-y-2">
-                            <li><span class="font-medium">Virtual (Zoom) Format</span></li>
-                            <li><span class="font-medium">45-Minute Talk:</span> 45‑minute presentation followed by discussion / Q&A.</li>
-                            <li><span class="font-medium">(Optional)</span> Informal conversation after each talk.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <h3 class="text-2xl font-bold mb-6 text-center">Organizers</h3>
-                <div id="organizers-grid" class="grid gap-8 justify-items-center [grid-template-columns:repeat(auto-fit,minmax(220px,1fr))]">
-                    </div>
-            </section>
-        </main>
-
-        <footer class="text-center mt-12 py-6 border-t border-slate-200">
-            <p class="text-slate-500">&copy; <span id="current-year"></span> Business and Marketing Analytics Seminar. All rights reserved.</p>
-            <p class="text-sm text-slate-400 mt-2">For questions, please contact us at <a href="mailto:minkshin@cityu.edu.hk" class="text-indigo-500 hover:underline">minkshin@cityu.edu.hk</a></p>
-        </footer>
-    </div>
-
-    <script>
+<script>
         // --- DATA SECTION ---
 
         const seminarData = [
-            
             {
                 date: "2026-10-30T12:00:00-04:00",
                 speaker: "Joonhyuk Yang",
@@ -164,7 +33,7 @@
                 zoomUrl: "https://cityu.zoom.us/j/82822000720"
             }
         ];
-            
+          
 
         const pastSeminarData = [
             {
@@ -354,21 +223,17 @@
                     return;
                 }
             
-                // 1. Dynamically get the date prefix (YYYY-MM-DD) of the very next seminar
                 const nextDatePrefix = upcomingSeminars[0].date.split('T')[0];
-                
-                // 2. Group all speakers that share this exact date
                 const daySpeakers = upcomingSeminars.filter(s => s.date.startsWith(nextDatePrefix));
                 
                 let dayContentHtml = '';
                 let zoomUrlToUse = 'https://cityu.zoom.us/j/82822000720';
             
-                // Format the date dynamically for the header
                 const displayDate = new Date(daySpeakers[0].date).toLocaleString('en-US', { 
                     weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', timeZone: 'America/New_York' 
                 });
             
-                if (daySpeakers.length > 1) { // Multiple speakers on the same day
+                if (daySpeakers.length > 1) { 
                     zoomUrlToUse = daySpeakers[0].zoomUrl;
                     dayContentHtml = `
                         <div class="bg-white p-6 md:p-8 rounded-lg shadow-md mb-6">
@@ -389,6 +254,7 @@
                                         <span class="inline-block bg-slate-100 text-slate-700 text-xs px-2.5 py-1 rounded-full font-semibold mb-2">${formattedTime} Eastern time</span>
                                         <h3 class="text-xl font-semibold text-slate-900 mb-1">${seminar.title}</h3>
                                         <p class="text-medium font-medium text-indigo-700">${seminar.speaker} <span class="text-slate-500 font-normal">(${seminar.affiliation})</span></p>
+                                        ${seminar.abstract ? `<p class="text-sm text-slate-600 mt-3 leading-relaxed">${seminar.abstract}</p>` : ''}
                                     </div>
                         `;
                     });
@@ -405,7 +271,6 @@
                         </div>
                     `;
                 } else {
-                    // Fallback for days with only a single speaker
                     const nextSeminar = daySpeakers[0];
                     const seminarDate = new Date(nextSeminar.date);
                     const dateTimeOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: '2-digit', timeZone: 'America/New_York' };
@@ -420,6 +285,7 @@
                                     <h3 class="text-xl font-semibold text-indigo-700">${nextSeminar.title}</h3>
                                     <p class="text-xl font-semibold mt-4 mb-1">${nextSeminar.speaker}</p>
                                     <p class="text-medium text-slate-500 mb-1">${nextSeminar.affiliation}</p>
+                                    ${nextSeminar.abstract ? `<p class="text-sm text-slate-600 mt-4 leading-relaxed">${nextSeminar.abstract}</p>` : ''}
                                 </div>
                                 <div class="md:col-span-1 flex flex-col space-y-3">
                                     <a href="${nextSeminar.zoomUrl}" target="_blank" class="text-center w-full font-semibold py-2 px-4 rounded-lg transition-colors duration-300 bg-green-500 text-white hover:bg-green-600">Join via Zoom</a>
@@ -429,7 +295,6 @@
                     `;
                 }
             
-                // Add mailing list button onto the base layout
                 dayContentHtml += `
                     <div class="text-center mt-8 p-6 bg-slate-50 rounded-lg">
                         <h3 class="text-medium font-semibold mb-2">Please join our mailing list for future updates.</h3>
@@ -439,6 +304,7 @@
             
                 homeSection.innerHTML = dayContentHtml;
             }
+
             function renderTable(data, tbodyId) {
                 const tbody = document.getElementById(tbodyId);
                 tbody.innerHTML = ''; 
@@ -489,43 +355,47 @@
                     tbody.appendChild(row);
                 });
             }
+
             function renderOrganizers() {
                 const grid = document.getElementById('organizers-grid');
                 grid.innerHTML = '';
-                organizerData.forEach(organizer => {
-                    grid.innerHTML += `
-                        <div class="bg-white rounded-lg shadow-md text-center p-6 transform hover:scale-105 transition-transform duration-300">
-                            <img src="${organizer.imageUrl}" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover border-4 border-slate-100" onerror="this.src='https://placehold.co/400x400/e2e8f0/64748b?text=Image';">
-                            <h4 class="font-bold text-lg">${organizer.name}</h4>
-                            <p class="text-sm text-slate-500">${organizer.affiliation}</p>
-                        </div>
+                organizerData.forEach(org => {
+                    const card = document.createElement('div');
+                    card.className = "bg-white p-6 rounded-lg shadow-md text-center w-full";
+                    card.innerHTML = `
+                        <img src="${org.imageUrl}" alt="${org.name}" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover shadow-sm">
+                        <h4 class="text-lg font-bold text-slate-900">${org.name}</h4>
+                        <p class="text-sm text-slate-500">${org.affiliation}</p>
                     `;
+                    grid.appendChild(card);
                 });
             }
 
-            function handleNav(e) {
-                if (!e.target.matches('.nav-link')) return;
-                e.preventDefault();
-                const targetId = e.target.dataset.target;
-                navLinks.forEach(link => link.classList.toggle('active', link.dataset.target === targetId));
-                contentSections.forEach(section => section.classList.toggle('visible', section.id === targetId));
-                history.pushState(null, null, `#${targetId}`);
-            }
+            // Navigation Switch Logic
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('data-target');
 
-            mainNav.addEventListener('click', handleNav);
-            document.getElementById('current-year').textContent = new Date().getFullYear();
+                    navLinks.forEach(l => l.classList.remove('active'));
+                    this.classList.add('active');
 
+                    contentSections.forEach(section => {
+                        if (section.id === targetId) {
+                            section.classList.add('visible');
+                        } else {
+                            section.classList.remove('visible');
+                        }
+                    });
+                });
+            });
+
+            // Initial Renders
             renderHomePage();
             renderTable(upcomingSeminars, 'schedule-body');
-            renderTable(pastSeminarData.sort((a,b) => new Date(b.date) - new Date(a.date)), 'past-body');
+            renderTable(pastSeminarData, 'past-body');
             renderOrganizers();
 
-            window.addEventListener('popstate', () => {
-                const hash = window.location.hash.substring(1) || 'home';
-                const targetLink = document.querySelector(`.nav-link[data-target="${hash}"]`);
-                if (targetLink) targetLink.click();
-            });
+            document.getElementById('current-year').textContent = new Date().getFullYear();
         });
     </script>
-</body>
-</html>
