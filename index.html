@@ -148,8 +148,8 @@
                 speaker: "Wooyong Jo",
                 affiliation: "Purdue University",
                 discussant: "TBA", 
-                title: "TBA",
-                abstract: "Presentation details for this talk will be updated.",
+                title: "Mega Influencers versus Niche Creators: Who Turns Viewers into Players and Buyers?",
+                abstract: "Social media has given rise to online consumption communities, or fandoms, which are complex networks of ancillary creators and consumers organized around a core product or intellectual property. Video game communities, for example, link players with content creators centered on a specific game. Publishers and creators can have divergent incentives, because creators may benefit from content that grows their own following at the core game’s expense. Using linked individual-level data on livestreaming viewing, gameplay, and in-game purchases for a free-to-play game, we exploit two sources of exogenous variation in viewing: an unexpected outage of the livestreaming platform that overlapped prime hours more in the United States than in Europe, and the unexpected unavailability of the streamers each player regularly watches. We find that viewing significantly increases gameplay: a 10% increase in viewing minutes leads to approximately a 4.6% increase in gameplay minutes. Importantly, content from micro streamers raises play substantially more than content from mega streamers. However, viewing does not raise in-game purchases on average, and purchase responses to micro streamers appear to be concentrated among recent buyers. The findings suggest that usage gains from creator content do not automatically translate into revenue.",
                 paperUrl: "#",
                 zoomUrl: "https://cityu.zoom.us/j/82822000720"
             },
@@ -467,27 +467,28 @@
                         discussantAffiliation = seminar.discussant.substring(firstCommaIndex + 1).trim();
                     }
 
-                    const row = `
-                        <tr>
-                            <td class="px-6 py-4 text-sm font-medium text-slate-900">
-                                <div>${formattedDate}</div>
-                                <div class="text-xs text-indigo-500 font-normal mt-0.5">${formattedTime}</div>
-                            </td>
-                            <td class="px-6 py-4 text-sm text-slate-600">
-                                <div class="font-medium text-slate-900">${seminar.speaker}</div>
-                                <div class="text-xs text-slate-500 mt-0.5">${seminar.affiliation}</div>
-                            </td>
-                            <td class="px-6 py-4 text-sm text-slate-600">
-                                <div class="font-medium text-slate-900">${discussantName}</div>
-                                ${discussantAffiliation ? `<div class="text-xs text-slate-500 mt-0.5">${discussantAffiliation}</div>` : ''}
-                            </td>
-                            <td class="px-6 py-4 text-sm text-slate-600 font-medium">${seminar.title}</td>
-                        </tr>
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td class="px-6 py-4 text-sm font-medium text-slate-900">
+                            <div>${formattedDate}</div>
+                            <div class="text-xs text-indigo-500 font-normal mt-0.5">${formattedTime}</div>
+                        </td>
+                        <td class="px-6 py-4 text-sm text-slate-600">
+                            <div class="font-medium text-slate-900">${seminar.speaker}</div>
+                            <div class="text-xs text-slate-500 mt-0.5">${seminar.affiliation}</div>
+                        </td>
+                        <td class="px-6 py-4 text-sm text-slate-600">
+                            <div class="font-medium text-slate-900">${discussantName}</div>
+                            <div class="text-xs text-slate-500 mt-0.5">${discussantAffiliation}</div>
+                        </td>
+                        <td class="px-6 py-4 text-sm text-slate-600">
+                            <div class="font-medium text-slate-900">${seminar.title}</div>
+                            ${seminar.abstract ? `<p class="text-xs text-slate-500 mt-1 italic">${seminar.abstract}</p>` : ''}
+                        </td>
                     `;
-                    tbody.innerHTML += row;
+                    tbody.appendChild(row);
                 });
             }
-
             function renderOrganizers() {
                 const grid = document.getElementById('organizers-grid');
                 grid.innerHTML = '';
