@@ -1,401 +1,422 @@
 <script>
-        // --- DATA SECTION ---
+(() => {
+  'use strict';
 
-        const seminarData = [
-            {
-                date: "2026-10-30T12:00:00-04:00",
-                speaker: "Joonhyuk Yang",
-                affiliation: "University of Notre Dame",
-                discussant: "TBA", 
-                title: "Retail Value of Co-Branded Credit Cards for First-Time Borrowers",
-                abstract: "Co-branded credit cards combine financing with relationship marketing, but their reach depends on whom the issuer approves. This paper studies a temporary approval pilot in Peru, linking application records for 91,638 applicants without an observed formal credit history to item-level loyalty transactions recorded independently of card payment. Difference-in-differences estimates comparing approved and rejected applicants show that, over the next twelve months, approval raises average monthly spending at the partner retailer by 61.7% relative to the approved group's pre-decision average. Among continuing shoppers, a descriptive decomposition attributes 60.6% of the spending contrast to increased visit frequency. Cardholder-exclusive promotions are closely associated with deeper spending in previously purchased categories, while most of the overall effect occurs in categories applicants had not purchased before, including on trips without promotion redemption. Approval also raises monthly gross margin by about 40% relative to the approved group's pre-decision average. Promoted items carry negative recorded margins on average, but trips containing them contribute positively because other basket purchases offset those losses---a pattern consistent with basket-level loss-leader economics. These findings highlight why customer selection is a shared strategic concern in co-branded partnerships.",
-                paperUrl: "#",
-                zoomUrl: "https://cityu.zoom.us/j/82822000720"
-            },
-            {
-                date: "2026-11-20T12:00:00-05:00",
-                speaker: "Wooyong Jo",
-                affiliation: "Purdue University",
-                discussant: "TBA", 
-                title: "Mega Influencers versus Niche Creators: Who Turns Viewers into Players and Buyers?",
-                abstract: "Social media has given rise to online consumption communities, or fandoms, which are complex networks of ancillary creators and consumers organized around a core product or intellectual property. Video game communities, for example, link players with content creators centered on a specific game. Publishers and creators can have divergent incentives, because creators may benefit from content that grows their own following at the core game’s expense. Using linked individual-level data on livestreaming viewing, gameplay, and in-game purchases for a free-to-play game, we exploit two sources of exogenous variation in viewing: an unexpected outage of the livestreaming platform that overlapped prime hours more in the United States than in Europe, and the unexpected unavailability of the streamers each player regularly watches. We find that viewing significantly increases gameplay: a 10% increase in viewing minutes leads to approximately a 4.6% increase in gameplay minutes. Importantly, content from micro streamers raises play substantially more than content from mega streamers. However, viewing does not raise in-game purchases on average, and purchase responses to micro streamers appear to be concentrated among recent buyers. The findings suggest that usage gains from creator content do not automatically translate into revenue.",
-                paperUrl: "#",
-                zoomUrl: "https://cityu.zoom.us/j/82822000720"
-            },
-            {
-                date: "2026-12-11T12:00:00-05:00",
-                speaker: "Irene Nahm",
-                affiliation: "University of Minnesota",
-                discussant: "TBA", 
-                title: "TBA",
-                abstract: "Presentation details for this talk will be updated.",
-                paperUrl: "#",
-                zoomUrl: "https://cityu.zoom.us/j/82822000720"
-            }
-        ];
-          
+  // --- DATA SECTION ---
 
-        const pastSeminarData = [
-            {
-                date: "2026-09-25T12:00:00-04:00",
-                speaker: "Kevin Lee",
-                affiliation: "University of Michigan",
-                discussant: "more Q&A", 
-                title: "Ideas Worth Testing: Generative AI and the Returns to Experimentation",
-                abstract: "Predicting which version of marketing content (promotional content, calls-to-action, email copy, etc.) will perform best is difficult. Randomized experiments can resolve this uncertainty but are used sparingly in practice, as the gains from testing the available alternatives may not justify the potential loss of engagement from showing customers poorly performing content. We propose using generative AI to strengthen incentives to experiment by creating better content to test. We use a predictive model not to choose the best content directly, but rather as a guide for generative AI to produce improved variants of human-authored content. Across three large field experiments, we find substantial improvements in the upper tail of the performance distribution without deterioration in the lower tail. The best AI-generated content outperforms the best human-authored content by 36 to 47 percent, while average performance rises modestly by 5 percent. Even though the predictive model helped generate these high performers, it cannot reliably identify them in advance. These hard-to-predict gains raise the experimentation premium, the within-campaign gain from testing the candidates rather than choosing one before launch. In simulations calibrated to the main experiment, an adaptive design that shifts traffic toward better-performing variants achieves engagement 33 percent above the human-authored average. Four percentage points of this lift come from the higher average quality of the combined human and AI candidate set and can be captured without testing; the remaining 29 points are the experimentation premium. In comparison, the premium on the human-authored content alone is 1 point. A theoretical model shows how prediction can substitute for experimentation when used to select content, yet complement it when used to guide generation. More broadly, holding the predictive model fixed, our approach makes experimentation worthwhile for more campaigns and thereby incentivizes the collection of new experimental data.",
-                paperUrl: "#",
-                zoomUrl: "https://cityu.zoom.us/j/82822000720"
-            },
-            {
-                date: "2026-06-24T12:00:00-04:00",
-                speaker: "Cheolho Song",
-                affiliation: "Washington University in St. Louis",
-                discussant: "more Q&A", 
-                title: "Double Machine Learning for a Semiparametric Sample Selection Model with High-Dimensional Covariates: Application to Mall-Wide Promotions",
-                abstract: "Presentation details for this talk will be updated.",
-                paperUrl: "#",
-                zoomUrl: "https://cityu.zoom.us/j/82822000720"
-            },
-            {
-                date: "2026-06-24T12:45:00-04:00",
-                speaker: "Jee Hae Ha",
-                affiliation: "University of California Irvine",
-                discussant: "more Q&A", 
-                title: "Human–AI Complementarity and Patient Welfare under Information Asymmetry",
-                abstract: "Presentation details for this talk will be updated.",
-                paperUrl: "#",
-                zoomUrl: "https://cityu.zoom.us/j/82822000720"
-            },
-            {
-                date: "2026-06-17T12:00:00-04:00",
-                speaker: "Enoch Hyunwook Kang",
-                affiliation: "University of Washington",
-                discussant: "more Q&A", 
-                title: "Personalized AI Alignment revisited: the Necessity and Sufficiency of User Diversity",
-                abstract: "Presentation details for this talk will be updated.",
-                paperUrl: "#",
-                zoomUrl: "https://cityu.zoom.us/j/82822000720"
-            },
-            {
-                date: "2026-06-17T12:45:00-04:00",
-                speaker: "Chaewon Seol",
-                affiliation: "Purdue University",
-                discussant: "more Q&A", 
-                title: "Trajectory Matters: Retail Exposure and Youth Protection in Legal Cannabis Markets",
-                abstract: "Presentation details for this talk will be updated.",
-                paperUrl: "#",
-                zoomUrl: "https://cityu.zoom.us/j/82822000720"
-            },
-            {
-                date: "2026-06-17T13:30:00-04:00",
-                speaker: "Jungeun Lim",
-                affiliation: "University of Wisconsin-Madison",
-                discussant: "more Q&A", 
-                title: "Deconstructing the Roles of Brand and Product Design in Purchase Decisions",
-                abstract: "Presentation details for this talk will be updated.",
-                paperUrl: "#",
-                zoomUrl: "https://cityu.zoom.us/j/82822000720"
-            },
-            {
-                date: "2026-05-15T12:00:00-04:00",
-                speaker: "Jungju Yu",
-                affiliation: "Seoul National University",
-                discussant: "more Q&A", 
-                title: "Opaque Auctions: Value of Information and Transparency in Ad Auctions",
-                abstract: "Online advertising markets exhibit two characteristic features: opacity in the platform's allocation process and two-sided information asymmetry...",
-                paperUrl: "#",
-                zoomUrl: "https://cityu.zoom.us/j/82822000720"
-            },
-            {
-                date: "2026-04-17T12:00:00-04:00",
-                speaker: "Hayoung Cheon",
-                affiliation: "Amazon",
-                discussant: "more Q&A", 
-                title: "Amazon Economist 2026: Some work using LLM/Agents",
-                abstract: "This seminar, presented by Amazon Economist Hayoung Cheon, will explore various industry research projects, covering a wide range of topics including large language models (LLMs) and AI agents.",
-                paperUrl: "#",
-                zoomUrl: "https://cityu.zoom.us/j/82822000720"
-            },
-            {
-                date: "2026-03-27T12:00:00-04:00",
-                speaker: "W. Jason Choi",
-                affiliation: "University of Maryland",
-                discussant: "more Q&A", 
-                title: "When Learning Increases Uncertainty: A Model of Multidimensional Consumer Evaluation",
-                abstract: "Consumers often learn about products in environments where uncertainty is multidimensional...",
-                paperUrl: "#",
-                zoomUrl: "https://cityu.zoom.us/j/82822000720"
-            },
-            {
-                date: "2026-02-20T12:00:00-05:00",
-                speaker: "Minjee Sun",
-                affiliation: "University of Iowa",
-                discussant: "more Q&A", 
-                title: "To Change or Not to Change: When and How Creators Should Respond to Customer Feedback?",
-                abstract: "This research investigates how producers’ content revisions made in the presence of customer feedback relate to subsequent market outcomes...",
-                paperUrl: "#",
-                zoomUrl: "https://osu.zoom.us/j/97929260403?pwd=EH2bRQhEOjcTf93KbsNY5mWFY4PmNV.1"
-            },
-            {
-                date: "2026-01-23T12:00:00-05:00",
-                speaker: "Yewon Kim",
-                affiliation: "Stanford University",
-                discussant: "Jane Lee, Ph.D. Student at Texas A&M University", 
-                title: "Marketing Durable and Sustainable Technologies in Low- and Middle-Income Countries",
-                abstract: "We examine barriers to - and market-based solutions for - adopting durable and sustainable technologies...",
-                paperUrl: "#",
-                zoomUrl: "https://cityu.zoom.us/j/82822000720"
-            },
-            {
-                date: "2025-12-12T11:00:00-05:00",
-                speaker: "Woochoel Shin",
-                affiliation: "University of Florida",
-                discussant: "Soohyun Kim, Ph.D. Student at University of Southern California",		
-                title: "Does an Integrated Ad Management Platform Yield Better Results? Evidence from a Field Experiment in Search Advertising",
-                abstract: "Advertisers increasingly rely on an intermediary to coordinate and optimize campaign performance across multiple ad platforms...",
-                paperUrl: "#",
-                zoomUrl: "https://cityu.zoom.us/j/82822000720"
-            },
-            {
-                date: "2025-11-14T11:00:00-05:00",
-                speaker: "Hana Choi",
-                affiliation: "University of Rochester",
-                discussant: "more Q&A", 
-                title: "Do Review Solicitations Elicit Reviews Where They Matter for Sales and Returns?",
-                abstract: "Firms solicit online reviews to enhance sales and reduce mismatches...",
-                paperUrl: "#",
-                zoomUrl: "https://cityu.zoom.us/j/82822000720"
-            },
-            {
-                date: "2025-10-17T11:00:00-04:00",
-                speaker: "Kyeongbin Kim",
-                affiliation: "University of Wisconsin",
-                discussant: "Enoch Hyunwook Kang, Ph.D. Student at University of Washington",
-                title: "Multi-Task Learning for Customer Base Analysis: Evidence from a Thousand Companies",
-                abstract: "Modeling customer-base activity is inherently a multi-objective problem...",
-                paperUrl: "#",
-                zoomUrl: "https://cityu.zoom.us/j/82822000720"
-            },
-            {
-                date: "2025-09-26T11:30:00-04:00",
-                speaker: "Tongil (TI) Kim",
-                affiliation: "University of Texas at Dallas",
-                discussant: "Bella (Yeolim) Yoon, Ph.D. Student at University of Minnesota",
-                title: "Got Chocolate Milk? School Flavored Milk Ban and its Impact on Retail Beverage Consumption",
-                abstract: "Do targeted school nutrition bans generate spillover effects on retail purchases...",
-                paperUrl: "#",
-                zoomUrl: "https://cityu.zoom.us/j/88347992599"
-            }
-        ];
+  const seminarData = [
+      {
+          date: "2026-10-30T12:00:00-04:00",
+          speaker: "Joonhyuk Yang",
+          affiliation: "University of Notre Dame",
+          discussant: "TBA", 
+          title: "Retail Value of Co-Branded Credit Cards for First-Time Borrowers",
+          abstract: "Co-branded credit cards combine financing with relationship marketing, but their reach depends on whom the issuer approves. This paper studies a temporary approval pilot in Peru, linking application records for 91,638 applicants without an observed formal credit history to item-level loyalty transactions recorded independently of card payment. Difference-in-differences estimates comparing approved and rejected applicants show that, over the next twelve months, approval raises average monthly spending at the partner retailer by 61.7% relative to the approved group's pre-decision average. Among continuing shoppers, a descriptive decomposition attributes 60.6% of the spending contrast to increased visit frequency. Cardholder-exclusive promotions are closely associated with deeper spending in previously purchased categories, while most of the overall effect occurs in categories applicants had not purchased before, including on trips without promotion redemption. Approval also raises monthly gross margin by about 40% relative to the approved group's pre-decision average. Promoted items carry negative recorded margins on average, but trips containing them contribute positively because other basket purchases offset those losses---a pattern consistent with basket-level loss-leader economics. These findings highlight why customer selection is a shared strategic concern in co-branded partnerships.",
+          paperUrl: "#",
+          zoomUrl: "https://cityu.zoom.us/j/82822000720"
+      },
+      {
+          date: "2026-11-20T12:00:00-05:00",
+          speaker: "Wooyong Jo",
+          affiliation: "Purdue University",
+          discussant: "TBA", 
+          title: "Mega Influencers versus Niche Creators: Who Turns Viewers into Players and Buyers?",
+          abstract: "Social media has given rise to online consumption communities, or fandoms, which are complex networks of ancillary creators and consumers organized around a core product or intellectual property. Video game communities, for example, link players with content creators centered on a specific game. Publishers and creators can have divergent incentives, because creators may benefit from content that grows their own following at the core game’s expense. Using linked individual-level data on livestreaming viewing, gameplay, and in-game purchases for a free-to-play game, we exploit two sources of exogenous variation in viewing: an unexpected outage of the livestreaming platform that overlapped prime hours more in the United States than in Europe, and the unexpected unavailability of the streamers each player regularly watches. We find that viewing significantly increases gameplay: a 10% increase in viewing minutes leads to approximately a 4.6% increase in gameplay minutes. Importantly, content from micro streamers raises play substantially more than content from mega streamers. However, viewing does not raise in-game purchases on average, and purchase responses to micro streamers appear to be concentrated among recent buyers. The findings suggest that usage gains from creator content do not automatically translate into revenue.",
+          paperUrl: "#",
+          zoomUrl: "https://cityu.zoom.us/j/82822000720"
+      },
+      {
+          date: "2026-12-11T12:00:00-05:00",
+          speaker: "Irene Nahm",
+          affiliation: "University of Minnesota",
+          discussant: "TBA", 
+          title: "TBA",
+          abstract: "Presentation details for this talk will be updated.",
+          paperUrl: "#",
+          zoomUrl: "https://cityu.zoom.us/j/82822000720"
+      }
+  ];
 
-        const organizerData = [
-            {
-                name: "Byungyeon Kim",
-                affiliation: "University of Minnesota",
-                imageUrl: "https://carlsonschool.umn.edu/sites/carlsonschool.umn.edu/files/styles/cropped_profile_image/public/photo.jpg.webp?itok=hMMfIUF0"
-            },
-            {
-                name: "Mingyung Kim",
-                affiliation: "Ohio State University",
-                imageUrl: "https://s3.us-east-2.amazonaws.com/files.fisher.osu.edu/public/styles/profile_image_840/public/profile-images/Photo_MingyungKim_20241014_0.jpg"
-            },
-            {
-                name: "Minkyu Shin",
-                affiliation: "City University of Hong Kong",
-                imageUrl: "https://www.cb.cityu.edu.hk/portfolio/photos/minkshin.jpg"
-            }
-        ];
 
-        // --- CORE LOGIC ---
+  const pastSeminarData = [
+      {
+          date: "2026-09-25T12:00:00-04:00",
+          speaker: "Kevin Lee",
+          affiliation: "University of Michigan",
+          discussant: "more Q&A", 
+          title: "Ideas Worth Testing: Generative AI and the Returns to Experimentation",
+          abstract: "Predicting which version of marketing content (promotional content, calls-to-action, email copy, etc.) will perform best is difficult. Randomized experiments can resolve this uncertainty but are used sparingly in practice, as the gains from testing the available alternatives may not justify the potential loss of engagement from showing customers poorly performing content. We propose using generative AI to strengthen incentives to experiment by creating better content to test. We use a predictive model not to choose the best content directly, but rather as a guide for generative AI to produce improved variants of human-authored content. Across three large field experiments, we find substantial improvements in the upper tail of the performance distribution without deterioration in the lower tail. The best AI-generated content outperforms the best human-authored content by 36 to 47 percent, while average performance rises modestly by 5 percent. Even though the predictive model helped generate these high performers, it cannot reliably identify them in advance. These hard-to-predict gains raise the experimentation premium, the within-campaign gain from testing the candidates rather than choosing one before launch. In simulations calibrated to the main experiment, an adaptive design that shifts traffic toward better-performing variants achieves engagement 33 percent above the human-authored average. Four percentage points of this lift come from the higher average quality of the combined human and AI candidate set and can be captured without testing; the remaining 29 points are the experimentation premium. In comparison, the premium on the human-authored content alone is 1 point. A theoretical model shows how prediction can substitute for experimentation when used to select content, yet complement it when used to guide generation. More broadly, holding the predictive model fixed, our approach makes experimentation worthwhile for more campaigns and thereby incentivizes the collection of new experimental data.",
+          paperUrl: "#",
+          zoomUrl: "https://cityu.zoom.us/j/82822000720"
+      },
+      {
+          date: "2026-06-24T12:00:00-04:00",
+          speaker: "Cheolho Song",
+          affiliation: "Washington University in St. Louis",
+          discussant: "more Q&A", 
+          title: "Double Machine Learning for a Semiparametric Sample Selection Model with High-Dimensional Covariates: Application to Mall-Wide Promotions",
+          abstract: "Presentation details for this talk will be updated.",
+          paperUrl: "#",
+          zoomUrl: "https://cityu.zoom.us/j/82822000720"
+      },
+      {
+          date: "2026-06-24T12:45:00-04:00",
+          speaker: "Jee Hae Ha",
+          affiliation: "University of California Irvine",
+          discussant: "more Q&A", 
+          title: "Human–AI Complementarity and Patient Welfare under Information Asymmetry",
+          abstract: "Presentation details for this talk will be updated.",
+          paperUrl: "#",
+          zoomUrl: "https://cityu.zoom.us/j/82822000720"
+      },
+      {
+          date: "2026-06-17T12:00:00-04:00",
+          speaker: "Enoch Hyunwook Kang",
+          affiliation: "University of Washington",
+          discussant: "more Q&A", 
+          title: "Personalized AI Alignment revisited: the Necessity and Sufficiency of User Diversity",
+          abstract: "Presentation details for this talk will be updated.",
+          paperUrl: "#",
+          zoomUrl: "https://cityu.zoom.us/j/82822000720"
+      },
+      {
+          date: "2026-06-17T12:45:00-04:00",
+          speaker: "Chaewon Seol",
+          affiliation: "Purdue University",
+          discussant: "more Q&A", 
+          title: "Trajectory Matters: Retail Exposure and Youth Protection in Legal Cannabis Markets",
+          abstract: "Presentation details for this talk will be updated.",
+          paperUrl: "#",
+          zoomUrl: "https://cityu.zoom.us/j/82822000720"
+      },
+      {
+          date: "2026-06-17T13:30:00-04:00",
+          speaker: "Jungeun Lim",
+          affiliation: "University of Wisconsin-Madison",
+          discussant: "more Q&A", 
+          title: "Deconstructing the Roles of Brand and Product Design in Purchase Decisions",
+          abstract: "Presentation details for this talk will be updated.",
+          paperUrl: "#",
+          zoomUrl: "https://cityu.zoom.us/j/82822000720"
+      },
+      {
+          date: "2026-05-15T12:00:00-04:00",
+          speaker: "Jungju Yu",
+          affiliation: "Seoul National University",
+          discussant: "more Q&A", 
+          title: "Opaque Auctions: Value of Information and Transparency in Ad Auctions",
+          abstract: "Online advertising markets exhibit two characteristic features: opacity in the platform's allocation process and two-sided information asymmetry...",
+          paperUrl: "#",
+          zoomUrl: "https://cityu.zoom.us/j/82822000720"
+      },
+      {
+          date: "2026-04-17T12:00:00-04:00",
+          speaker: "Hayoung Cheon",
+          affiliation: "Amazon",
+          discussant: "more Q&A", 
+          title: "Amazon Economist 2026: Some work using LLM/Agents",
+          abstract: "This seminar, presented by Amazon Economist Hayoung Cheon, will explore various industry research projects, covering a wide range of topics including large language models (LLMs) and AI agents.",
+          paperUrl: "#",
+          zoomUrl: "https://cityu.zoom.us/j/82822000720"
+      },
+      {
+          date: "2026-03-27T12:00:00-04:00",
+          speaker: "W. Jason Choi",
+          affiliation: "University of Maryland",
+          discussant: "more Q&A", 
+          title: "When Learning Increases Uncertainty: A Model of Multidimensional Consumer Evaluation",
+          abstract: "Consumers often learn about products in environments where uncertainty is multidimensional...",
+          paperUrl: "#",
+          zoomUrl: "https://cityu.zoom.us/j/82822000720"
+      },
+      {
+          date: "2026-02-20T12:00:00-05:00",
+          speaker: "Minjee Sun",
+          affiliation: "University of Iowa",
+          discussant: "more Q&A", 
+          title: "To Change or Not to Change: When and How Creators Should Respond to Customer Feedback?",
+          abstract: "This research investigates how producers’ content revisions made in the presence of customer feedback relate to subsequent market outcomes...",
+          paperUrl: "#",
+          zoomUrl: "https://osu.zoom.us/j/97929260403?pwd=EH2bRQhEOjcTf93KbsNY5mWFY4PmNV.1"
+      },
+      {
+          date: "2026-01-23T12:00:00-05:00",
+          speaker: "Yewon Kim",
+          affiliation: "Stanford University",
+          discussant: "Jane Lee, Ph.D. Student at Texas A&M University", 
+          title: "Marketing Durable and Sustainable Technologies in Low- and Middle-Income Countries",
+          abstract: "We examine barriers to - and market-based solutions for - adopting durable and sustainable technologies...",
+          paperUrl: "#",
+          zoomUrl: "https://cityu.zoom.us/j/82822000720"
+      },
+      {
+          date: "2025-12-12T11:00:00-05:00",
+          speaker: "Woochoel Shin",
+          affiliation: "University of Florida",
+          discussant: "Soohyun Kim, Ph.D. Student at University of Southern California",		
+          title: "Does an Integrated Ad Management Platform Yield Better Results? Evidence from a Field Experiment in Search Advertising",
+          abstract: "Advertisers increasingly rely on an intermediary to coordinate and optimize campaign performance across multiple ad platforms...",
+          paperUrl: "#",
+          zoomUrl: "https://cityu.zoom.us/j/82822000720"
+      },
+      {
+          date: "2025-11-14T11:00:00-05:00",
+          speaker: "Hana Choi",
+          affiliation: "University of Rochester",
+          discussant: "more Q&A", 
+          title: "Do Review Solicitations Elicit Reviews Where They Matter for Sales and Returns?",
+          abstract: "Firms solicit online reviews to enhance sales and reduce mismatches...",
+          paperUrl: "#",
+          zoomUrl: "https://cityu.zoom.us/j/82822000720"
+      },
+      {
+          date: "2025-10-17T11:00:00-04:00",
+          speaker: "Kyeongbin Kim",
+          affiliation: "University of Wisconsin",
+          discussant: "Enoch Hyunwook Kang, Ph.D. Student at University of Washington",
+          title: "Multi-Task Learning for Customer Base Analysis: Evidence from a Thousand Companies",
+          abstract: "Modeling customer-base activity is inherently a multi-objective problem...",
+          paperUrl: "#",
+          zoomUrl: "https://cityu.zoom.us/j/82822000720"
+      },
+      {
+          date: "2025-09-26T11:30:00-04:00",
+          speaker: "Tongil (TI) Kim",
+          affiliation: "University of Texas at Dallas",
+          discussant: "Bella (Yeolim) Yoon, Ph.D. Student at University of Minnesota",
+          title: "Got Chocolate Milk? School Flavored Milk Ban and its Impact on Retail Beverage Consumption",
+          abstract: "Do targeted school nutrition bans generate spillover effects on retail purchases...",
+          paperUrl: "#",
+          zoomUrl: "https://cityu.zoom.us/j/88347992599"
+      }
+  ];
 
-        document.addEventListener('DOMContentLoaded', function() {
-            const navLinks = document.querySelectorAll('.nav-link');
-            const contentSections = document.querySelectorAll('.content-section');
-            const mainNav = document.getElementById('main-nav');
+  const organizerData = [
+      {
+          name: "Byungyeon Kim",
+          affiliation: "University of Minnesota",
+          imageUrl: "https://carlsonschool.umn.edu/sites/carlsonschool.umn.edu/files/styles/cropped_profile_image/public/photo.jpg.webp?itok=hMMfIUF0"
+      },
+      {
+          name: "Mingyung Kim",
+          affiliation: "Ohio State University",
+          imageUrl: "https://s3.us-east-2.amazonaws.com/files.fisher.osu.edu/public/styles/profile_image_840/public/profile-images/Photo_MingyungKim_20241014_0.jpg"
+      },
+      {
+          name: "Minkyu Shin",
+          affiliation: "City University of Hong Kong",
+          imageUrl: "https://www.cb.cityu.edu.hk/portfolio/photos/minkshin.jpg"
+      }
+  ];
 
-            const now = new Date();
-            const upcomingSeminars = seminarData.filter(s => new Date(s.date) >= now).sort((a, b) => new Date(a.date) - new Date(b.date));
+  // --- CORE LOGIC ---
+  const EASTERN_TIME = 'America/New_York';
+  const MAILING_LIST_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSclEvQ5M7wkh5AZhky0gVBLuCuPPnUSt-DL1xnyNDrzzGsB8A/viewform';
 
-            function renderHomePage() {
-                const homeSection = document.getElementById('home');
-                if (upcomingSeminars.length === 0) {
-                    homeSection.innerHTML = `<div class="text-center bg-white p-8 rounded-lg shadow-md"><h2 class="text-3xl font-bold mb-4">Welcome!</h2><p class="text-slate-600 text-lg">The schedule for the next season will be announced soon.</p></div>`;
-                    return;
-                }
-            
-                const nextDatePrefix = upcomingSeminars[0].date.split('T')[0];
-                const daySpeakers = upcomingSeminars.filter(s => s.date.startsWith(nextDatePrefix));
-                
-                let dayContentHtml = '';
-                let zoomUrlToUse = 'https://cityu.zoom.us/j/82822000720';
-            
-                const displayDate = new Date(daySpeakers[0].date).toLocaleString('en-US', { 
-                    weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', timeZone: 'America/New_York' 
-                });
-            
-                if (daySpeakers.length > 1) { 
-                    zoomUrlToUse = daySpeakers[0].zoomUrl;
-                    dayContentHtml = `
-                        <div class="bg-white p-6 md:p-8 rounded-lg shadow-md mb-6">
-                            <h2 class="text-2xl md:text-3xl font-bold mb-2">Job Market Practice Talks</h2>
-                            <p class="text-lg text-indigo-600 font-semibold mb-6">${displayDate} (Eastern Time)</p>
-                            
-                            <div class="grid md:grid-cols-3 gap-8">
-                                <div class="md:col-span-2 space-y-8 divide-y divide-slate-100">
-                    `;
-            
-                    daySpeakers.forEach((seminar, idx) => {
-                        const seminarDate = new Date(seminar.date);
-                        const formattedTime = seminarDate.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', timeZone: 'America/New_York' });
-                        const paddingTop = idx > 0 ? 'pt-6' : '';
-            
-                        dayContentHtml += `
-                                    <div class="${paddingTop}">
-                                        <span class="inline-block bg-slate-100 text-slate-700 text-xs px-2.5 py-1 rounded-full font-semibold mb-2">${formattedTime} Eastern time</span>
-                                        <h3 class="text-xl font-semibold text-slate-900 mb-1">${seminar.title}</h3>
-                                        <p class="text-medium font-medium text-indigo-700">${seminar.speaker} <span class="text-slate-500 font-normal">(${seminar.affiliation})</span></p>
-                                        ${seminar.abstract ? `<p class="text-sm text-slate-600 mt-3 leading-relaxed">${seminar.abstract}</p>` : ''}
-                                    </div>
-                        `;
-                    });
-            
-                    dayContentHtml += `
-                                </div>
-                                <div class="md:col-span-1 flex flex-col justify-start">
-                                    <div class="bg-slate-50 p-4 rounded-lg border border-slate-100 sticky top-24">
-                                        <p class="text-sm text-slate-500 mb-3 font-medium">All presentations use the same link:</p>
-                                        <a href="${zoomUrlToUse}" target="_blank" class="block text-center w-full bg-green-500 text-white hover:bg-green-600 font-semibold py-2.5 px-4 rounded-lg transition-colors duration-300 shadow-sm">Join via Zoom</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    `;
-                } else {
-                    const nextSeminar = daySpeakers[0];
-                    const seminarDate = new Date(nextSeminar.date);
-                    const dateTimeOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: '2-digit', timeZone: 'America/New_York' };
-                    const formattedDateTime = seminarDate.toLocaleString('en-US', dateTimeOptions) + " (Eastern Time)";
-            
-                    dayContentHtml = `
-                        <div class="bg-white p-6 md:p-8 rounded-lg shadow-md">
-                            <h2 class="text-2xl md:text-3xl font-bold mb-2">Next Talk</h2>
-                            <p class="text-lg text-slate-500 mb-6">${formattedDateTime}</p>
-                            <div class="grid md:grid-cols-3 gap-6">
-                                <div class="md:col-span-2">
-                                    <h3 class="text-xl font-semibold text-indigo-700">${nextSeminar.title}</h3>
-                                    <p class="text-xl font-semibold mt-4 mb-1">${nextSeminar.speaker}</p>
-                                    <p class="text-medium text-slate-500 mb-1">${nextSeminar.affiliation}</p>
-                                    ${nextSeminar.abstract ? `<p class="text-sm text-slate-600 mt-4 leading-relaxed">${nextSeminar.abstract}</p>` : ''}
-                                </div>
-                                <div class="md:col-span-1 flex flex-col space-y-3">
-                                    <a href="${nextSeminar.zoomUrl}" target="_blank" class="text-center w-full font-semibold py-2 px-4 rounded-lg transition-colors duration-300 bg-green-500 text-white hover:bg-green-600">Join via Zoom</a>
-                                </div>
-                            </div>
-                        </div>
-                    `;
-                }
-            
-                dayContentHtml += `
-                    <div class="text-center mt-8 p-6 bg-slate-50 rounded-lg">
-                        <h3 class="text-medium font-semibold mb-2">Please join our mailing list for future updates.</h3>
-                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSclEvQ5M7wkh5AZhky0gVBLuCuPPnUSt-DL1xnyNDrzzGsB8A/viewform" target="_blank" class="inline-block bg-sky-500 text-white font-semibold py-2 px-6 rounded-lg hover:bg-sky-600 transition-colors duration-300 shadow-sm">Sign Up</a>
-                    </div>
-                `;
-            
-                homeSection.innerHTML = dayContentHtml;
-            }
+  function escapeHtml(value) {
+    const entities = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' };
+    return String(value ?? '').replace(/[&<>"']/g, character => entities[character]);
+  }
 
-            function renderTable(data, tbodyId) {
-                const tbody = document.getElementById(tbodyId);
-                tbody.innerHTML = ''; 
+  function httpUrl(value) {
+    try {
+      const url = new URL(String(value || ''));
+      return ['https:', 'http:'].includes(url.protocol) ? url.href : '';
+    } catch {
+      return '';
+    }
+  }
 
-                data.forEach(seminar => {
-                    const seminarDate = new Date(seminar.date);
-                    
-                    const formattedDate = seminarDate.toLocaleDateString('en-US', { 
-                        year: 'numeric', 
-                        month: 'short', 
-                        day: 'numeric', 
-                        timeZone: 'America/New_York' 
-                    });
-                    
-                    const formattedTime = seminarDate.toLocaleTimeString('en-US', {
-                        hour: 'numeric',
-                        minute: '2-digit',
-                        timeZone: 'America/New_York'
-                    });
+  function formatDate(value, options) {
+    return new Intl.DateTimeFormat('en-US', {
+      ...options, timeZone: EASTERN_TIME
+    }).format(new Date(value));
+  }
 
-                    let discussantName = seminar.discussant || '';
-                    let discussantAffiliation = '';
-                    const firstCommaIndex = discussantName.indexOf(',');
-                    if (firstCommaIndex !== -1) {
-                        discussantName = seminar.discussant.substring(0, firstCommaIndex).trim();
-                        discussantAffiliation = seminar.discussant.substring(firstCommaIndex + 1).trim();
-                    }
+  // Group by the actual Eastern calendar day, even if an input uses UTC.
+  function easternDay(value) {
+    const parts = new Intl.DateTimeFormat('en-US', {
+      timeZone: EASTERN_TIME, year: 'numeric', month: '2-digit', day: '2-digit'
+    }).formatToParts(new Date(value));
+    return ['year', 'month', 'day'].map(type => parts.find(part => part.type === type).value).join('-');
+  }
 
-                    const row = document.createElement('tr');
-                    row.innerHTML = `
-                        <td class="px-6 py-4 text-sm font-medium text-slate-900">
-                            <div>${formattedDate}</div>
-                            <div class="text-xs text-indigo-500 font-normal mt-0.5">${formattedTime}</div>
-                        </td>
-                        <td class="px-6 py-4 text-sm text-slate-600">
-                            <div class="font-medium text-slate-900">${seminar.speaker}</div>
-                            <div class="text-xs text-slate-500 mt-0.5">${seminar.affiliation}</div>
-                        </td>
-                        <td class="px-6 py-4 text-sm text-slate-600">
-                            <div class="font-medium text-slate-900">${discussantName}</div>
-                            <div class="text-xs text-slate-500 mt-0.5">${discussantAffiliation}</div>
-                        </td>
-                        <td class="px-6 py-4 text-sm text-slate-600">
-                            <div class="font-medium text-slate-900">${seminar.title}</div>
-                            ${seminar.abstract ? `<p class="text-xs text-slate-500 mt-1 italic">${seminar.abstract}</p>` : ''}
-                        </td>
-                    `;
-                    tbody.appendChild(row);
-                });
-            }
+  function externalLink(url, label, className) {
+    const safeUrl = httpUrl(url);
+    return safeUrl
+      ? `<a href="${escapeHtml(safeUrl)}" target="_blank" rel="noopener noreferrer" class="${className}">${escapeHtml(label)}</a>`
+      : '';
+  }
 
-            function renderOrganizers() {
-                const grid = document.getElementById('organizers-grid');
-                grid.innerHTML = '';
-                organizerData.forEach(org => {
-                    const card = document.createElement('div');
-                    card.className = "bg-white p-6 rounded-lg shadow-md text-center w-full";
-                    card.innerHTML = `
-                        <img src="${org.imageUrl}" alt="${org.name}" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover shadow-sm">
-                        <h4 class="text-lg font-bold text-slate-900">${org.name}</h4>
-                        <p class="text-sm text-slate-500">${org.affiliation}</p>
-                    `;
-                    grid.appendChild(card);
-                });
-            }
+  function renderSignup() {
+    return `<div class="seminar-signup text-center mt-8 p-6 bg-slate-50 rounded-lg">
+      <h3 class="text-base font-semibold mb-2">Please join our mailing list for future updates.</h3>
+      ${externalLink(MAILING_LIST_URL, 'Sign Up', 'seminar-button seminar-button-blue inline-block bg-sky-500 text-white font-semibold py-2 px-6 rounded-lg hover:bg-sky-600')}
+    </div>`;
+  }
 
-            // Navigation Switch Logic
-            navLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('data-target');
+  function renderHomePage(upcomingSeminars) {
+    const homeSection = document.getElementById('home');
+    if (!homeSection) return;
 
-                    navLinks.forEach(l => l.classList.remove('active'));
-                    this.classList.add('active');
+    if (upcomingSeminars.length === 0) {
+      homeSection.innerHTML = `<div class="seminar-card text-center bg-white p-8 rounded-lg shadow-md">
+        <h2 class="text-3xl font-bold mb-4">Welcome!</h2>
+        <p class="text-slate-600 text-lg">The schedule for the next season will be announced soon.</p>
+      </div>${renderSignup()}`;
+      return;
+    }
 
-                    contentSections.forEach(section => {
-                        if (section.id === targetId) {
-                            section.classList.add('visible');
-                        } else {
-                            section.classList.remove('visible');
-                        }
-                    });
-                });
-            });
+    const nextDay = easternDay(upcomingSeminars[0].date);
+    const daySpeakers = upcomingSeminars.filter(seminar => easternDay(seminar.date) === nextDay);
+    const multipleTalks = daySpeakers.length > 1;
+    const headingDate = formatDate(daySpeakers[0].date, {
+      weekday: 'long', year: 'numeric', month: 'long', day: 'numeric',
+      ...(multipleTalks ? {} : { hour: 'numeric', minute: '2-digit' })
+    });
 
-            // Initial Renders
-            renderHomePage();
-            renderTable(upcomingSeminars, 'schedule-body');
-            renderTable(pastSeminarData, 'past-body');
-            renderOrganizers();
+    const talksHtml = daySpeakers.map(seminar => {
+      const talkTime = formatDate(seminar.date, { hour: 'numeric', minute: '2-digit' });
+      const zoomLink = externalLink(seminar.zoomUrl, 'Join via Zoom',
+        'seminar-button seminar-button-green inline-block bg-green-500 text-white hover:bg-green-600 font-semibold py-2 px-4 rounded-lg');
+      return `<article class="seminar-talk">
+        <div>
+          ${multipleTalks ? `<span class="seminar-time inline-block bg-slate-100 text-slate-700 text-xs px-2.5 py-1 rounded-full font-semibold mb-2">${escapeHtml(talkTime)} Eastern Time</span>` : ''}
+          <h3 class="seminar-talk-title text-xl font-semibold text-indigo-700">${escapeHtml(seminar.title)}</h3>
+          <p class="seminar-speaker text-xl font-semibold mt-4 mb-1">${escapeHtml(seminar.speaker)}</p>
+          <p class="seminar-affiliation text-base text-slate-500 mb-1">${escapeHtml(seminar.affiliation)}</p>
+          ${seminar.abstract ? `<p class="seminar-abstract text-sm text-slate-600 mt-4 leading-relaxed">${escapeHtml(seminar.abstract)}</p>` : ''}
+        </div>
+        ${zoomLink ? `<div class="seminar-actions mt-4">${zoomLink}</div>` : ''}
+      </article>`;
+    }).join('');
 
-            document.getElementById('current-year').textContent = new Date().getFullYear();
-        });
-    </script>
+    homeSection.innerHTML = `<div class="seminar-card bg-white p-6 md:p-8 rounded-lg shadow-md">
+      <h2 class="text-2xl md:text-3xl font-bold mb-2">${multipleTalks ? 'Job Market Practice Talks' : 'Next Talk'}</h2>
+      <p class="seminar-date text-lg text-slate-500 mb-6">${escapeHtml(headingDate)} (Eastern Time)</p>
+      <div class="space-y-8">${talksHtml}</div>
+    </div>${renderSignup()}`;
+  }
+
+  function renderTable(data, tbodyId, emptyMessage) {
+    const tbody = document.getElementById(tbodyId);
+    if (!tbody) return;
+
+    if (data.length === 0) {
+      tbody.innerHTML = `<tr><td colspan="4" class="seminar-empty px-6 py-4 text-center text-slate-500">${escapeHtml(emptyMessage)}</td></tr>`;
+      return;
+    }
+
+    tbody.innerHTML = data.map(seminar => {
+      const date = formatDate(seminar.date, { year: 'numeric', month: 'short', day: 'numeric' });
+      const time = formatDate(seminar.date, { hour: 'numeric', minute: '2-digit' });
+      const discussant = String(seminar.discussant || '');
+      const comma = discussant.indexOf(',');
+      const discussantName = comma === -1 ? discussant : discussant.slice(0, comma).trim();
+      const discussantAffiliation = comma === -1 ? '' : discussant.slice(comma + 1).trim();
+
+      return `<tr>
+        <td class="seminar-date-cell px-6 py-4 text-sm font-medium text-slate-900">
+          <div>${escapeHtml(date)}</div>
+          <div class="seminar-table-time text-xs text-indigo-500 font-normal mt-0.5">${escapeHtml(time)}</div>
+        </td>
+        <td class="px-6 py-4 text-sm text-slate-600">
+          <div class="seminar-table-primary font-medium text-slate-900">${escapeHtml(seminar.speaker)}</div>
+          <div class="seminar-table-secondary text-xs text-slate-500 mt-0.5">${escapeHtml(seminar.affiliation)}</div>
+        </td>
+        <td class="px-6 py-4 text-sm text-slate-600">
+          <div class="seminar-table-primary font-medium text-slate-900">${escapeHtml(discussantName)}</div>
+          <div class="seminar-table-secondary text-xs text-slate-500 mt-0.5">${escapeHtml(discussantAffiliation)}</div>
+        </td>
+        <td class="px-6 py-4 text-sm text-slate-600">
+          <div class="seminar-table-primary font-medium text-slate-900">${escapeHtml(seminar.title)}</div>
+          ${seminar.abstract ? `<p class="seminar-table-abstract text-xs text-slate-500 mt-1 italic">${escapeHtml(seminar.abstract)}</p>` : ''}
+        </td>
+      </tr>`;
+    }).join('');
+  }
+
+  function renderOrganizers() {
+    const grid = document.getElementById('organizers-grid');
+    if (!grid) return;
+    grid.innerHTML = organizerData.map(organizer => {
+      const imageUrl = httpUrl(organizer.imageUrl);
+      return `<article class="organizer-card bg-white p-6 rounded-lg shadow-md text-center w-full">
+        ${imageUrl ? `<img src="${escapeHtml(imageUrl)}" alt="${escapeHtml(organizer.name)}" width="96" height="96" loading="lazy" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover shadow-sm">` : ''}
+        <h3 class="text-lg font-bold text-slate-900">${escapeHtml(organizer.name)}</h3>
+        <p class="text-sm text-slate-500">${escapeHtml(organizer.affiliation)}</p>
+      </article>`;
+    }).join('');
+    grid.querySelectorAll('img').forEach(image => {
+      image.addEventListener('error', () => { image.hidden = true; }, { once: true });
+    });
+  }
+
+  function initializeSeminars() {
+    // Prevent duplicate listeners if an editor inserts this script more than once.
+    const root = document.documentElement;
+    if (root.dataset.seminarsInitialized === 'true') return;
+
+    const now = Date.now();
+    // Both arrays feed the same calendar. Past entries no longer disappear.
+    const allSeminars = [...seminarData, ...pastSeminarData].filter(seminar => {
+      if (Number.isFinite(Date.parse(seminar.date))) return true;
+      console.warn('Skipping seminar with an invalid date:', seminar.speaker, seminar.date);
+      return false;
+    });
+    const upcomingSeminars = allSeminars
+      .filter(seminar => Date.parse(seminar.date) >= now)
+      .sort((a, b) => Date.parse(a.date) - Date.parse(b.date));
+    const pastSeminars = allSeminars
+      .filter(seminar => Date.parse(seminar.date) < now)
+      .sort((a, b) => Date.parse(b.date) - Date.parse(a.date));
+
+    renderHomePage(upcomingSeminars);
+    renderTable(upcomingSeminars, 'schedule-body', 'No upcoming seminars are scheduled yet.');
+    renderTable(pastSeminars, 'past-body', 'There are no past seminars yet.');
+    renderOrganizers();
+
+    const currentYear = document.getElementById('current-year');
+    if (currentYear) currentYear.textContent = formatDate(now, { year: 'numeric' });
+
+    const navLinks = [...document.querySelectorAll('.nav-link')];
+    const sections = [...document.querySelectorAll('.content-section')];
+    const targetFor = link => link.getAttribute('data-target') || (link.getAttribute('href') || '').replace(/^#/, '');
+
+    function showSection(targetId) {
+      if (!sections.some(section => section.id === targetId)) return false;
+      sections.forEach(section => {
+        const active = section.id === targetId;
+        section.classList.toggle('visible', active);
+        section.hidden = !active;
+      });
+      navLinks.forEach(link => {
+        const active = targetFor(link) === targetId;
+        link.classList.toggle('active', active);
+        if (active) link.setAttribute('aria-current', 'page');
+        else link.removeAttribute('aria-current');
+      });
+      return true;
+    }
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', event => {
+        if (showSection(targetFor(link))) event.preventDefault();
+      });
+    });
+    const activeLink = navLinks.find(link => link.classList.contains('active'));
+    const preferredSection = window.location.hash.slice(1) || (activeLink ? targetFor(activeLink) : 'home');
+    if (!showSection(preferredSection) && !showSection('home') && sections[0]) {
+      showSection(sections[0].id);
+    }
+    root.dataset.seminarsInitialized = 'true';
+  }
+
+  // Also works when this script is loaded after DOMContentLoaded has fired.
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeSeminars, { once: true });
+  } else {
+    initializeSeminars();
+  }
+})();
+</script>
